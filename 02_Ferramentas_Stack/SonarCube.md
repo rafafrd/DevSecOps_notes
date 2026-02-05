@@ -1,4 +1,5 @@
 
+Para o setup rápido, utilize o [[Docker_Basic]] com a imagem oficial.
 
 ### Resumo
 

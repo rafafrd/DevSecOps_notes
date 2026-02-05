@@ -1,3 +1,4 @@
+[[Linux]]
 ### Resumo
 
 ### BigFix Compliance (Correção e Conformidade)
