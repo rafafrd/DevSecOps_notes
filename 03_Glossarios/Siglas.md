@@ -1,3 +1,6 @@
+---
+aliases:
+---
 
 ### 1. Tipos de Testes e Análises (AST)
 

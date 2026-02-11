@@ -60,3 +60,6 @@ fortify
 
 rabit para code review
 
+---
+IBSEC
+curso devsecops
