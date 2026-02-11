@@ -2113,11 +2113,3 @@ echo "✅ SonarLint passed!"
 |**Feedback**|Tempo real (IDE)|Scan agendado|
 |**Correção**|Desenvolvedor|DevOps/SRE|
 
-**Use ambos para segurança completa!** 🔒
-
-```
-
----
-
-Esta documentação fornece um guia completo e prático sobre SonarQube, cobrindo desde conceitos fundamentais até integração avançada com GitHub Actions e workflows de análise. Use como referência rápida para operação de SAST no seu pipeline DevSecOps! 🚀
-```
