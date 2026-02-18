@@ -63,3 +63,17 @@ rabit para code review
 ---
 IBSEC
 curso devsecops
+
+--- 
+Aumento drastico em uso de GenIA para usuarios comuns, na arquitetura comum de app X com IA, aparece mais camadas, foi adicionado uma camada de estrutura para LLM, 
+
+->perigos
+exposição de dados, prompt injection, jailbreak, proteçoes de LLM ainda estão muito inicias, 
+
+foi criado um OWASP para LLM, já existem Framework de proteção para LLM
+
+- Model security, faz a validação do modulo que foi baixado, para evitar vies e etc...
+- Red team - 
+
+
+netsec, IA vai analisar o prompt, proteção de LLM no nivel de rede
