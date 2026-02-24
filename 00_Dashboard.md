@@ -14,7 +14,7 @@ na squad são utilizados essas ferramentas
 | [[01_Fundamentos/Linux\|🐧 Linux & Hardening]]            | [[02_Ferramentas_Stack/SonarCube\|🔍 SonarQube (SAST)]]           | [[03_Glossarios/Siglas\|📖 Glossário de Siglas]] |
 | [[Conteiners\|🐳 Docker & Containers]]   | [[02_Ferramentas_Stack/Tenable\|🎯 Tenable (Vulnerability)]]      | [[99_Inbox/\|📥 Capturas Rápidas]]               |
 | [[01_Fundamentos/Git\|🌿 Git & GitOps]]                   | [[02_Ferramentas_Stack/XM Cyber\|🛣️ XM Cyber (Attack Path)]]     |                                                  |
-| [[01_Fundamentos/Resumo Redes\|🌐 Redes de Computadores]] | [[02_Ferramentas_Stack/BigFix Compliance\|🛠️ BigFix (Patching)]] |                                                  |
+| [[Redes\|🌐 Redes de Computadores]] | [[02_Ferramentas_Stack/BigFix Compliance\|🛠️ BigFix (Patching)]] |                                                  |
 |                                                           | [[02_Ferramentas_Stack/OpenCTI\|🧠 OpenCTI (Threat Intel)]]       |                                                  |
 
 ---
