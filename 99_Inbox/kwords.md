@@ -27,7 +27,7 @@ mostrar para o usuario, como proteger o negocio dele, ele nao sabe oq vc faz e n
 ---
 risco = incerteza 
 
-risco inerente (controle) > risco residual
+risco inerente > (controle) > risco residual
 
 o que é risco, variaveis, impacto e probabilidade 
 
@@ -63,3 +63,5 @@ rabit para code review
 ---
 IBSEC
 curso devsecops
+
+---

