@@ -1,4 +1,3 @@
-
 # Docker & Kubernetes - Container Security & Orchestration
 
 **Tags:** #docker #kubernetes #containers #container-security #dockerfile #k8s #orchestration #devsecops
@@ -42,7 +41,7 @@ Virtual Machine:
   ├─────────────────────────────────────┤
   │       Hardware (CPU, RAM, Disk)     │
   └─────────────────────────────────────┘
-  
+
   Size: GB (3-20GB per VM)
   Boot time: Minutes
   Isolation: Strong (full OS)
@@ -53,17 +52,17 @@ Container:
   ├──────────┼──────────┼───────────────┤
   │ Bins/Libs│ Bins/Libs│ Bins/Libs     │
   ├──────────┴──────────┴───────────────┤
-  │     Container Runtime (Docker)       │
+  │     Container Runtime (Docker)      │
   ├─────────────────────────────────────┤
   │          Host OS (Linux)            │
   ├─────────────────────────────────────┤
   │       Hardware (CPU, RAM, Disk)     │
   └─────────────────────────────────────┘
-  
+
   Size: MB (50-500MB per container)
   Boot time: Seconds
   Isolation: Process-level (namespaces + cgroups)
-````
+```
 
 **Por que Containers?**
 
@@ -100,26 +99,26 @@ Imutabilidade:
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
 │  Docker Client (CLI)                                        │
-│  $ docker run, docker build, docker push                   │
+│  $ docker run, docker build, docker push                    │
 │         │                                                   │
 │         ▼                                                   │
-│  ┌──────────────────────────────────────────────────────┐  │
-│  │ Docker Daemon (dockerd)                              │  │
-│  │ ├─ Images (layered filesystem)                       │  │
-│  │ ├─ Containers (running instances)                    │  │
-│  │ ├─ Networks (bridge, host, overlay)                  │  │
-│  │ └─ Volumes (persistent data)                         │  │
-│  └──────────────────────────────────────────────────────┘  │
+│  ┌──────────────────────────────────────────────────────┐   │
+│  │ Docker Daemon (dockerd)                              │   │
+│  │ ├─ Images (layered filesystem)                       │   │
+│  │ ├─ Containers (running instances)                    │   │
+│  │ ├─ Networks (bridge, host, overlay)                  │   │
+│  │ └─ Volumes (persistent data)                         │   │
+│  └──────────────────────────────────────────────────────┘   │
 │         │                                                   │
 │         ▼                                                   │
-│  Container Runtime (containerd → runc)                     │
-│  ├─ Namespaces (PID, NET, MNT, IPC, UTS, USER)            │
-│  ├─ Cgroups (CPU, Memory, I/O limits)                     │
-│  ├─ Capabilities (fine-grained privileges)                │
-│  └─ Seccomp (syscall filtering)                           │
+│  Container Runtime (containerd → runc)                      │
+│  ├─ Namespaces (PID, NET, MNT, IPC, UTS, USER)              │
+│  ├─ Cgroups (CPU, Memory, I/O limits)                       │
+│  ├─ Capabilities (fine-grained privileges)                  │
+│  └─ Seccomp (syscall filtering)                             │
 │         │                                                   │
 │         ▼                                                   │
-│  Linux Kernel                                              │
+│  Linux Kernel                                               │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -130,34 +129,34 @@ Namespaces (Process Isolation):
   PID: Process ID isolation
     - Container sees only its processes
     - PID 1 inside container ≠ PID 1 on host
-  
+
   NET: Network isolation
     - Separate network stack (interfaces, routes, firewall)
     - Container has own IP address
-  
+
   MNT: Filesystem isolation
     - Separate mount points
     - Container can't see host filesystem (unless mounted)
-  
+
   IPC: Inter-Process Communication isolation
     - Separate message queues, semaphores
-  
+
   UTS: Hostname isolation
     - Container has its own hostname
-  
+
   USER: User ID isolation
     - UID 0 in container ≠ UID 0 on host (rootless)
 
 Cgroups (Resource Limits):
   CPU: cpu.cfs_quota_us, cpu.shares
-    --cpus="1.5"  # 1.5 CPU cores
-  
+    --cpus="1.5" # 1.5 CPU cores
+
   Memory: memory.limit_in_bytes
-    --memory="512m"  # 512MB RAM limit
-  
+    --memory="512m" # 512MB RAM limit
+
   I/O: blkio.throttle.read_bps_device
     --device-read-bps /dev/sda:1mb
-  
+
   Network: tc (traffic control)
     --network-bandwidth 100m
 
@@ -182,12 +181,12 @@ Image (Template):
   - Layered filesystem (union FS)
   - Stored in registry (Docker Hub, ECR, GCR)
   - Identified by: name:tag or digest (SHA256)
-  
+
   Example:
     nginx:1.25-alpine
     └─ nginx = repository name
     └─ 1.25-alpine = tag
-    
+
     nginx@sha256:a3f7c8e9...
     └─ digest (immutable hash)
 
@@ -196,7 +195,7 @@ Container (Running Instance):
   - Ephemeral by default (data lost on stop)
   - Can have volumes (persistent data)
   - Has state (running, stopped, paused)
-  
+
   Lifecycle:
     docker create → Created (not running)
     docker start  → Running
@@ -244,11 +243,11 @@ Public Registries:
   Docker Hub: hub.docker.com (padrão)
     - Free: Unlimited public repos
     - Paid: Private repos + higher pull limits
-    
+
   Quay.io (Red Hat): quay.io
     - Security scanning integrado
     - Container signing
-  
+
   GitHub Container Registry: ghcr.io
     - Integração nativa GitHub
     - Free para public repos
@@ -257,15 +256,15 @@ Private Registries:
   AWS ECR (Elastic Container Registry)
     - Scan automático (Clair)
     - IAM integration
-  
+
   Google GCR (Container Registry)
     - Vulnerability scanning
     - Binary Authorization
-  
+
   Azure ACR (Container Registry)
     - Geo-replication
     - Helm charts
-  
+
   Harbor (self-hosted)
     - Open-source (CNCF)
     - Vulnerability scanning (Trivy, Clair)
@@ -280,13 +279,13 @@ Private Registries:
 Examples:
   nginx:latest
   └─ Docker Hub (implicit), library (official), nginx, latest tag
-  
+
   docker.io/library/nginx:1.25-alpine
   └─ Explicit registry, official namespace
-  
+
   ghcr.io/company/web-app:v1.2.3
   └─ GitHub registry, company namespace, web-app repo, v1.2.3 tag
-  
+
   myregistry.azurecr.io/backend:latest@sha256:a3f7c8e9...
   └─ Azure registry, backend repo, latest tag, digest (immutable)
 ```
@@ -685,7 +684,7 @@ FROM gcr.io/distroless/base-debian12:debug
 ### docker-compose.yml Structure
 
 ```yaml
-version: '3.9'  # Compose file version
+version: "3.9" # Compose file version
 
 services:
   # Service 1: Web application
@@ -697,67 +696,67 @@ services:
         - NODE_ENV=production
     image: myapp/web:1.0.0
     container_name: web-app
-    
+
     ports:
-      - "3000:3000"  # host:container
-    
+      - "3000:3000" # host:container
+
     environment:
       - DATABASE_URL=postgresql://db:5432/myapp
       - REDIS_URL=redis://cache:6379
-    
+
     env_file:
       - .env.production
-    
+
     volumes:
-      - ./web/src:/app/src:ro  # read-only
-      - uploads:/app/uploads   # named volume
-    
+      - ./web/src:/app/src:ro # read-only
+      - uploads:/app/uploads # named volume
+
     networks:
       - frontend
       - backend
-    
+
     depends_on:
       - db
       - cache
-    
+
     restart: unless-stopped
-    
+
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
       interval: 30s
       timeout: 3s
       retries: 3
       start_period: 40s
-    
+
     deploy:
       resources:
         limits:
-          cpus: '1.0'
+          cpus: "1.0"
           memory: 512M
         reservations:
-          cpus: '0.5'
+          cpus: "0.5"
           memory: 256M
 
   # Service 2: Database
   db:
     image: postgres:16.1-alpine
     container_name: postgres-db
-    
+
     environment:
       POSTGRES_DB: myapp
       POSTGRES_USER: admin
-      POSTGRES_PASSWORD_FILE: /run/secrets/db_password  # Secret
-    
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_password # Secret
+
     volumes:
       - db-data:/var/lib/postgresql/data
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
-    
+
     networks:
       - backend
-    
+
     secrets:
       - db_password
-    
+
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U admin"]
       interval: 10s
@@ -768,15 +767,15 @@ services:
   cache:
     image: redis:7.2-alpine
     container_name: redis-cache
-    
+
     command: redis-server --requirepass ${REDIS_PASSWORD}
-    
+
     volumes:
       - cache-data:/data
-    
+
     networks:
       - backend
-    
+
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 5s
@@ -789,7 +788,7 @@ networks:
     driver: bridge
   backend:
     driver: bridge
-    internal: true  # No external access (security)
+    internal: true # No external access (security)
 
 # Volumes (persistent data)
 volumes:
@@ -851,17 +850,17 @@ docker-compose config
 
 ```yaml
 # docker-compose.yml
-version: '3.9'
+version: "3.9"
 
 services:
   app:
     image: myapp:latest
-    
+
     # ✓ Use secrets (not environment variables)
     secrets:
       - db_password
       - api_key
-    
+
     environment:
       # Reference secrets as files
       - DB_PASSWORD_FILE=/run/secrets/db_password
@@ -870,7 +869,7 @@ services:
 secrets:
   db_password:
     file: ./secrets/db_password.txt
-  
+
   api_key:
     file: ./secrets/api_key.txt
 ```
@@ -879,11 +878,11 @@ secrets:
 
 ```javascript
 // app.js - Read secrets from files (not ENV)
-const fs = require('fs');
+const fs = require("fs");
 
 function readSecret(secretPath) {
   try {
-    return fs.readFileSync(secretPath, 'utf8').trim();
+    return fs.readFileSync(secretPath, "utf8").trim();
   } catch (error) {
     console.error(`Failed to read secret: ${secretPath}`);
     process.exit(1);
@@ -910,59 +909,59 @@ const dbUrl = `postgresql://user:${dbPassword}@db:5432/myapp`;
 │ Kubernetes Cluster                                          │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│ ┌─────────────────────────────────────────────────────┐    │
-│ │ Control Plane (Master Node)                         │    │
-│ │                                                      │    │
-│ │ ┌──────────────────────────────────────────────┐    │    │
-│ │ │ API Server (kube-apiserver)                  │    │    │
-│ │ │ - REST API for all operations                │    │    │
-│ │ │ - Authentication & Authorization             │    │    │
-│ │ │ - Admission Controllers                      │    │    │
-│ │ └──────────────────────────────────────────────┘    │    │
-│ │                                                      │    │
-│ │ ┌──────────────────────────────────────────────┐    │    │
-│ │ │ etcd                                         │    │    │
-│ │ │ - Distributed key-value store                │    │    │
-│ │ │ - Cluster state & configuration              │    │    │
-│ │ │ - Must be encrypted at rest                  │    │    │
-│ │ └──────────────────────────────────────────────┘    │    │
-│ │                                                      │    │
-│ │ ┌──────────────────────────────────────────────┐    │    │
-│ │ │ Scheduler (kube-scheduler)                   │    │    │
-│ │ │ - Assigns Pods to Nodes                      │    │    │
-│ │ │ - Resource-aware (CPU, memory, affinity)    │    │    │
-│ │ └──────────────────────────────────────────────┘    │    │
-│ │                                                      │    │
-│ │ ┌──────────────────────────────────────────────┐    │    │
-│ │ │ Controller Manager                           │    │    │
-│ │ │ - ReplicaSet, Deployment, StatefulSet        │    │    │
-│ │ │ - Node, Job, CronJob controllers             │    │    │
-│ │ └──────────────────────────────────────────────┘    │    │
-│ └─────────────────────────────────────────────────────┘    │
+│ ┌─────────────────────────────────────────────────────┐     │
+│ │ Control Plane (Master Node)                         │     │
+│ │                                                     │     │
+│ │ ┌──────────────────────────────────────────────┐    │     │
+│ │ │ API Server (kube-apiserver)                  │    │     │
+│ │ │ - REST API for all operations                │    │     │
+│ │ │ - Authentication & Authorization             │    │     │
+│ │ │ - Admission Controllers                      │    │     │
+│ │ └──────────────────────────────────────────────┘    │     │
+│ │                                                     │     │
+│ │ ┌──────────────────────────────────────────────┐    │     │
+│ │ │ etcd                                         │    │     │
+│ │ │ - Distributed key-value store                │    │     │
+│ │ │ - Cluster state & configuration              │    │     │
+│ │ │ - Must be encrypted at rest                  │    │     │
+│ │ └──────────────────────────────────────────────┘    │     │
+│ │                                                     │     │
+│ │ ┌──────────────────────────────────────────────┐    │     │
+│ │ │ Scheduler (kube-scheduler)                   │    │     │
+│ │ │ - Assigns Pods to Nodes                      │    │     │
+│ │ │ - Resource-aware (CPU, memory, affinity)     │    │     │
+│ │ └──────────────────────────────────────────────┘    │     │
+│ │                                                     │     │
+│ │ ┌──────────────────────────────────────────────┐    │     │
+│ │ │ Controller Manager                           │    │     │
+│ │ │ - ReplicaSet, Deployment, StatefulSet        │    │     │
+│ │ │ - Node, Job, CronJob controllers             │    │     │
+│ │ └──────────────────────────────────────────────┘    │     │
+│ └─────────────────────────────────────────────────────┘     │
 │                          │                                  │
 │                          ▼                                  │
-│ ┌─────────────────────────────────────────────────────┐    │
-│ │ Worker Nodes (where Pods run)                       │    │
-│ │                                                      │    │
-│ │ Node 1                Node 2                Node 3  │    │
-│ │ ┌──────────┐         ┌──────────┐         ┌────┐   │    │
-│ │ │ kubelet  │         │ kubelet  │         │ .. │   │    │
-│ │ │ (agent)  │         │          │         └────┘   │    │
-│ │ └──────────┘         └──────────┘                  │    │
-│ │ ┌──────────┐         ┌──────────┐                  │    │
-│ │ │ kube-    │         │ kube-    │                  │    │
-│ │ │ proxy    │         │ proxy    │                  │    │
-│ │ └──────────┘         └──────────┘                  │    │
-│ │ ┌──────────┐         ┌──────────┐                  │    │
-│ │ │Container │         │Container │                  │    │
-│ │ │ Runtime  │         │ Runtime  │                  │    │
-│ │ │(containerd)       │(containerd)                  │    │
-│ │ └──────────┘         └──────────┘                  │    │
-│ │   Pods                 Pods                         │    │
-│ │ ┌────┬────┐         ┌────┬────┐                    │    │
-│ │ │ C1 │ C2 │         │ C3 │ C4 │                    │    │
-│ │ └────┴────┘         └────┴────┘                    │    │
-│ └─────────────────────────────────────────────────────┘    │
+│ ┌─────────────────────────────────────────────────────┐     │
+│ │ Worker Nodes (where Pods run)                       │     │
+│ │                                                     │     │
+│ │ Node 1                Node 2                Node 3  │     │
+│ │ ┌──────────┐         ┌──────────┐         ┌────┐    │     │
+│ │ │ kubelet  │         │ kubelet  │         │ .. │    │     │
+│ │ │ (agent)  │         │          │         └────┘    │     │
+│ │ └──────────┘         └──────────┘                   │     │
+│ │ ┌──────────┐         ┌──────────┐                   │     │
+│ │ │ kube-    │         │ kube-    │                   │     │
+│ │ │ proxy    │         │ proxy    │                   │     │
+│ │ └──────────┘         └──────────┘                   │     │
+│ │ ┌──────────┐         ┌──────────┐                   │     │
+│ │ │Container │         │Container │                   │     │
+│ │ │ Runtime  │         │ Runtime  │                   │     │
+│ │ │(containerd)       │(containerd)                   │     │
+│ │ └──────────┘         └──────────┘                   │     │
+│ │   Pods                 Pods                         │     │
+│ │ ┌────┬────┐         ┌────┬────┐                     │     │
+│ │ │ C1 │ C2 │         │ C3 │ C4 │                     │     │
+│ │ └────┴────┘         └────┴────┘                     │     │
+│ └─────────────────────────────────────────────────────┘     │
 └─────────────────────────────────────────────────────────────┘
 
 C = Container
@@ -985,7 +984,7 @@ Pod (Smallest deployable unit):
   - Shared storage (volumes)
   - Scheduled together on same Node
   - Ephemeral (can be killed/recreated anytime)
-  
+
   Example Pod with 2 containers:
     ┌──────────────────────────┐
     │ Pod: web-app-7f8c9d      │
@@ -1014,7 +1013,7 @@ Use Cases:
 Sidecar Pattern:
   Main Container: Application
   Sidecar: Log forwarder, metrics exporter
-  
+
   Example:
     - nginx (main)
     - fluentd (sidecar - ships logs)
@@ -1022,7 +1021,7 @@ Sidecar Pattern:
 Ambassador Pattern:
   Main Container: Application
   Ambassador: Proxy to external service
-  
+
   Example:
     - app (connects to localhost:5432)
     - cloud-sql-proxy (ambassador - connects to Cloud SQL)
@@ -1030,7 +1029,7 @@ Ambassador Pattern:
 Adapter Pattern:
   Main Container: Application (legacy format)
   Adapter: Format converter
-  
+
   Example:
     - app (outputs custom logs)
     - adapter (converts to JSON for ELK)
@@ -1054,24 +1053,24 @@ metadata:
     tier: frontend
 
 spec:
-  replicas: 3  # 3 instances
-  
+  replicas: 3 # 3 instances
+
   selector:
     matchLabels:
       app: web
-  
+
   # Rolling update strategy
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxSurge: 1        # 1 extra pod during update
-      maxUnavailable: 0  # Zero downtime
-  
+      maxSurge: 1 # 1 extra pod during update
+      maxUnavailable: 0 # Zero downtime
+
   template:
     metadata:
       labels:
         app: web
-    
+
     spec:
       # Security Context (Pod-level)
       securityContext:
@@ -1080,78 +1079,78 @@ spec:
         fsGroup: 2001
         seccompProfile:
           type: RuntimeDefault
-      
+
       # Containers
       containers:
-      - name: web
-        image: myapp/web:1.2.3@sha256:a3f7c8e9...
-        
-        # Container Security Context
-        securityContext:
-          allowPrivilegeEscalation: false
-          readOnlyRootFilesystem: true
-          runAsNonRoot: true
-          runAsUser: 1001
-          capabilities:
-            drop:
-              - ALL
-            add:
-              - NET_BIND_SERVICE
-        
-        # Ports
-        ports:
-        - containerPort: 3000
-          protocol: TCP
-        
-        # Environment Variables
-        env:
-        - name: NODE_ENV
-          value: "production"
-        - name: DATABASE_URL
-          valueFrom:
-            secretKeyRef:
-              name: db-credentials
-              key: url
-        
-        # Resource Limits
-        resources:
-          requests:
-            cpu: 100m      # 0.1 CPU
-            memory: 128Mi
-          limits:
-            cpu: 500m      # 0.5 CPU max
-            memory: 512Mi
-        
-        # Health Checks
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 3000
-          initialDelaySeconds: 30
-          periodSeconds: 10
-          timeoutSeconds: 3
-          failureThreshold: 3
-        
-        readinessProbe:
-          httpGet:
-            path: /ready
-            port: 3000
-          initialDelaySeconds: 5
-          periodSeconds: 5
-        
-        # Volumes
-        volumeMounts:
-        - name: tmp
-          mountPath: /tmp
-        - name: cache
-          mountPath: /app/cache
-      
+        - name: web
+          image: myapp/web:1.2.3@sha256:a3f7c8e9...
+
+          # Container Security Context
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            runAsNonRoot: true
+            runAsUser: 1001
+            capabilities:
+              drop:
+                - ALL
+              add:
+                - NET_BIND_SERVICE
+
+          # Ports
+          ports:
+            - containerPort: 3000
+              protocol: TCP
+
+          # Environment Variables
+          env:
+            - name: NODE_ENV
+              value: "production"
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: db-credentials
+                  key: url
+
+          # Resource Limits
+          resources:
+            requests:
+              cpu: 100m # 0.1 CPU
+              memory: 128Mi
+            limits:
+              cpu: 500m # 0.5 CPU max
+              memory: 512Mi
+
+          # Health Checks
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 3000
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 3
+
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 5
+
+          # Volumes
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+            - name: cache
+              mountPath: /app/cache
+
       # Volumes (ephemeral)
       volumes:
-      - name: tmp
-        emptyDir: {}
-      - name: cache
-        emptyDir: {}
+        - name: tmp
+          emptyDir: {}
+        - name: cache
+          emptyDir: {}
 ```
 
 #### Service (Networking)
@@ -1165,17 +1164,17 @@ metadata:
   namespace: production
 
 spec:
-  type: ClusterIP  # Internal only (default)
-  
+  type: ClusterIP # Internal only (default)
+
   selector:
-    app: web  # Routes to Pods with this label
-  
+    app: web # Routes to Pods with this label
+
   ports:
-  - protocol: TCP
-    port: 80        # Service port
-    targetPort: 3000  # Container port
-  
-  sessionAffinity: ClientIP  # Sticky sessions
+    - protocol: TCP
+      port: 80 # Service port
+      targetPort: 3000 # Container port
+
+  sessionAffinity: ClientIP # Sticky sessions
 ```
 
 **Service Types:**
@@ -1216,31 +1215,31 @@ metadata:
 
 spec:
   ingressClassName: nginx
-  
+
   tls:
-  - hosts:
-    - app.company.com
-    secretName: tls-certificate
-  
+    - hosts:
+        - app.company.com
+      secretName: tls-certificate
+
   rules:
-  - host: app.company.com
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: web-service
-            port:
-              number: 80
-      
-      - path: /api
-        pathType: Prefix
-        backend:
-          service:
-            name: api-service
-            port:
-              number: 8080
+    - host: app.company.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: web-service
+                port:
+                  number: 80
+
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: api-service
+                port:
+                  number: 8080
 ```
 
 #### ConfigMap & Secret
@@ -1262,7 +1261,6 @@ data:
     }
 
 ---
-
 # Secret (sensitive data)
 apiVersion: v1
 kind: Secret
@@ -1271,7 +1269,7 @@ metadata:
 type: Opaque
 stringData:
   username: admin
-  password: SuperSecret123!  # Base64 encoded automatically
+  password: SuperSecret123! # Base64 encoded automatically
   url: postgresql://admin:SuperSecret123!@db:5432/myapp
 ```
 
@@ -1291,10 +1289,10 @@ metadata:
   name: vulnerable-pod
 spec:
   containers:
-  - name: app
-    image: nginx
-    securityContext:
-      privileged: true  # ❌ Full host access!
+    - name: app
+      image: nginx
+      securityContext:
+        privileged: true # ❌ Full host access!
 ```
 
 **Exploit:**
@@ -1333,16 +1331,16 @@ spec:
     runAsUser: 1001
     seccompProfile:
       type: RuntimeDefault
-  
+
   containers:
-  - name: app
-    image: nginx
-    securityContext:
-      allowPrivilegeEscalation: false
-      readOnlyRootFilesystem: true
-      capabilities:
-        drop:
-          - ALL
+    - name: app
+      image: nginx
+      securityContext:
+        allowPrivilegeEscalation: false
+        readOnlyRootFilesystem: true
+        capabilities:
+          drop:
+            - ALL
 ```
 
 ---
@@ -1357,11 +1355,11 @@ metadata:
   name: app-pod
 spec:
   containers:
-  - name: app
-    image: myapp
-    env:
-    - name: DATABASE_PASSWORD
-      value: "SuperSecret123!"  # ❌ Visible!
+    - name: app
+      image: myapp
+      env:
+        - name: DATABASE_PASSWORD
+          value: "SuperSecret123!" # ❌ Visible!
 ```
 
 **Exploit:**
@@ -1390,28 +1388,28 @@ metadata:
   name: secure-app-pod
 spec:
   containers:
-  - name: app
-    image: myapp
-    
-    # Mount secret as volume (not ENV)
-    volumeMounts:
-    - name: db-credentials
-      mountPath: "/etc/secrets"
-      readOnly: true
-    
-    # Reference as file path
-    env:
-    - name: DATABASE_PASSWORD_FILE
-      value: "/etc/secrets/password"
-  
+    - name: app
+      image: myapp
+
+      # Mount secret as volume (not ENV)
+      volumeMounts:
+        - name: db-credentials
+          mountPath: "/etc/secrets"
+          readOnly: true
+
+      # Reference as file path
+      env:
+        - name: DATABASE_PASSWORD_FILE
+          value: "/etc/secrets/password"
+
   volumes:
-  - name: db-credentials
-    secret:
-      secretName: db-credentials
-      items:
-      - key: password
-        path: password
-        mode: 0400  # read-only for owner
+    - name: db-credentials
+      secret:
+        secretName: db-credentials
+        items:
+          - key: password
+            path: password
+            mode: 0400 # read-only for owner
 ```
 
 ---
@@ -1426,8 +1424,8 @@ metadata:
   name: app-pod
 spec:
   containers:
-  - name: app
-    image: random-user/suspicious-app:latest  # ❌ Who is this?
+    - name: app
+      image: random-user/suspicious-app:latest # ❌ Who is this?
 ```
 
 **Exploit (hidden in image):**
@@ -1485,17 +1483,17 @@ metadata:
   name: secure-app-pod
 spec:
   containers:
-  - name: app
-    # ✓ Official registry
-    # ✓ Digest (immutable)
-    image: ghcr.io/company/app@sha256:a3f7c8e9d2b1c4a5b6f8e7d9c1a2b3d4e5f6a7b8
-    
-    # Image pull policy
-    imagePullPolicy: Always
-  
+    - name: app
+      # ✓ Official registry
+      # ✓ Digest (immutable)
+      image: ghcr.io/company/app@sha256:a3f7c8e9d2b1c4a5b6f8e7d9c1a2b3d4e5f6a7b8
+
+      # Image pull policy
+      imagePullPolicy: Always
+
   # Private registry authentication
   imagePullSecrets:
-  - name: regcred
+    - name: regcred
 ```
 
 ---
@@ -1514,7 +1512,7 @@ spec:
 # Baseline (Minimally Restrictive):
   - Prevents known privilege escalations
   - Blocks: privileged, hostPath, hostNetwork
-  
+
 # Restricted (Heavily Restrictive):
   - Follows pod hardening best practices
   - Enforces: non-root, no privilege escalation, drop ALL capabilities
@@ -1540,13 +1538,12 @@ metadata:
   name: deny-all
   namespace: production
 spec:
-  podSelector: {}  # Applies to all pods
+  podSelector: {} # Applies to all pods
   policyTypes:
-  - Ingress
-  - Egress
+    - Ingress
+    - Egress
 
 ---
-
 # Allow: Web → API only
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
@@ -1556,22 +1553,21 @@ metadata:
 spec:
   podSelector:
     matchLabels:
-      app: api  # Applies to API pods
-  
+      app: api # Applies to API pods
+
   policyTypes:
-  - Ingress
-  
+    - Ingress
+
   ingress:
-  - from:
-    - podSelector:
-        matchLabels:
-          app: web  # Only from web pods
-    ports:
-    - protocol: TCP
-      port: 8080
+    - from:
+        - podSelector:
+            matchLabels:
+              app: web # Only from web pods
+      ports:
+        - protocol: TCP
+          port: 8080
 
 ---
-
 # Allow: API → Database only
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
@@ -1582,18 +1578,18 @@ spec:
   podSelector:
     matchLabels:
       app: postgres
-  
+
   policyTypes:
-  - Ingress
-  
+    - Ingress
+
   ingress:
-  - from:
-    - podSelector:
-        matchLabels:
-          app: api
-    ports:
-    - protocol: TCP
-      port: 5432
+    - from:
+        - podSelector:
+            matchLabels:
+              app: api
+      ports:
+        - protocol: TCP
+          port: 5432
 ```
 
 ---
@@ -1619,21 +1615,21 @@ env:
 jobs:
   build-and-scan:
     runs-on: ubuntu-latest
-    
+
     permissions:
       contents: read
       packages: write
-      security-events: write  # For SARIF upload
-    
+      security-events: write # For SARIF upload
+
     steps:
       # 1. Checkout code
       - name: Checkout repository
         uses: actions/checkout@v4
-      
+
       # 2. Set up Docker Buildx
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-      
+
       # 3. Log in to Container Registry
       - name: Log in to GHCR
         uses: docker/login-action@v3
@@ -1641,7 +1637,7 @@ jobs:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      
+
       # 4. Extract metadata (tags, labels)
       - name: Extract Docker metadata
         id: meta
@@ -1653,36 +1649,36 @@ jobs:
             type=ref,event=pr
             type=semver,pattern={{version}}
             type=sha,prefix={{branch}}-
-      
+
       # 5. Build Docker image
       - name: Build Docker image
         uses: docker/build-push-action@v5
         with:
           context: .
-          push: false  # Don't push yet (scan first)
-          load: true   # Load to local Docker
+          push: false # Don't push yet (scan first)
+          load: true # Load to local Docker
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-      
+
       # 6. Scan image with Trivy
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
-          format: 'sarif'
-          output: 'trivy-results.sarif'
-          severity: 'CRITICAL,HIGH'
-          exit-code: '1'  # Fail on vulnerabilities
-      
+          format: "sarif"
+          output: "trivy-results.sarif"
+          severity: "CRITICAL,HIGH"
+          exit-code: "1" # Fail on vulnerabilities
+
       # 7. Upload Trivy results to GitHub Security
       - name: Upload Trivy results to GitHub Security
         uses: github/codeql-action/upload-sarif@v3
         if: always()
         with:
-          sarif_file: 'trivy-results.sarif'
-      
+          sarif_file: "trivy-results.sarif"
+
       # 8. Scan with Snyk (optional)
       - name: Run Snyk container scan
         uses: snyk/actions/docker@master
@@ -1692,7 +1688,7 @@ jobs:
         with:
           image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
           args: --severity-threshold=high
-      
+
       # 9. Generate SBOM
       - name: Generate SBOM with Syft
         uses: anchore/sbom-action@v0
@@ -1700,14 +1696,14 @@ jobs:
           image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
           format: cyclonedx-json
           output-file: sbom.json
-      
+
       # 10. Upload SBOM as artifact
       - name: Upload SBOM
         uses: actions/upload-artifact@v4
         with:
           name: sbom
           path: sbom.json
-      
+
       # 11. Push image (only if all scans pass)
       - name: Push Docker image
         if: github.event_name != 'pull_request'
@@ -1717,12 +1713,12 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-      
+
       # 12. Sign image with Cosign (optional)
       - name: Install Cosign
         if: github.event_name != 'pull_request'
         uses: sigstore/cosign-installer@v3
-      
+
       - name: Sign image
         if: github.event_name != 'pull_request'
         run: |
@@ -1752,38 +1748,38 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       # Set up kubectl
       - name: Set up kubectl
         uses: azure/setup-kubectl@v3
         with:
-          version: 'v1.28.0'
-      
+          version: "v1.28.0"
+
       # Configure kubeconfig
       - name: Configure kubectl
         run: |
           mkdir -p $HOME/.kube
           echo "${{ secrets.KUBECONFIG }}" | base64 -d > $HOME/.kube/config
-      
+
       # Update image in Deployment
       - name: Deploy to Kubernetes
         run: |
           kubectl set image deployment/web-app \
             web=ghcr.io/${{ github.repository }}:${{ github.sha }} \
             -n production
-          
+
           kubectl rollout status deployment/web-app -n production
-      
+
       # Verify deployment
       - name: Verify deployment
         run: |
           kubectl get pods -n production
           kubectl get deployment web-app -n production
-      
+
       # Run smoke tests
       - name: Smoke tests
         run: |
@@ -1981,8 +1977,7 @@ $ kubectl run kube-bench \
 ### Docker Security Checklist
 
 ```yaml
-Image Security:
-  ✓ Use official base images
+Image Security: ✓ Use official base images
   ✓ Pin to specific version (digest, not "latest")
   ✓ Scan images (Trivy, Snyk, Clair)
   ✓ Multi-stage builds (minimize size)
@@ -1990,8 +1985,7 @@ Image Security:
   ✓ Sign images (Cosign, Notary)
   ✓ Generate SBOM (Syft, CycloneDX)
 
-Dockerfile:
-  ✓ Use non-root USER
+Dockerfile: ✓ Use non-root USER
   ✓ Drop ALL capabilities
   ✓ Read-only root filesystem
   ✓ No secrets in layers
@@ -1999,22 +1993,19 @@ Dockerfile:
   ✓ Use .dockerignore
   ✓ HEALTHCHECK defined
 
-Runtime:
-  ✓ Resource limits (--memory, --cpus)
+Runtime: ✓ Resource limits (--memory, --cpus)
   ✓ Read-only volumes (--read-only)
   ✓ No privileged mode
   ✓ Drop capabilities (--cap-drop)
   ✓ Seccomp profile (default or custom)
   ✓ AppArmor/SELinux profiles
 
-Network:
-  ✓ Isolated networks (custom bridge)
+Network: ✓ Isolated networks (custom bridge)
   ✓ Least privilege (no --net=host)
   ✓ TLS for registry communication
   ✓ Network policies (K8s)
 
-Secrets:
-  ✓ Never in ENV variables
+Secrets: ✓ Never in ENV variables
   ✓ Use Docker secrets / K8s secrets
   ✓ Mount as files (read-only)
   ✓ Rotate regularly
@@ -2066,21 +2057,21 @@ Monitoring & Compliance:
 
 ### Comparison Table
 
-|Aspecto|Docker Compose|Kubernetes|
-|---|---|---|
-|**Uso**|Desenvolvimento local|Produção (orquestração)|
-|**Escala**|1 host|Multi-node cluster|
-|**Alta Disponibilidade**|❌ Não|✅ Sim (replicas)|
-|**Load Balancing**|❌ Manual|✅ Automático|
-|**Auto-scaling**|❌ Não|✅ HPA, VPA|
-|**Self-healing**|❌ Não|✅ Sim (restarts automáticos)|
-|**Service Discovery**|⚠️ DNS básico|✅ DNS + Endpoints|
-|**Rolling Updates**|❌ Manual|✅ Automático|
-|**Secrets Management**|⚠️ Básico|✅ Nativo (encrypted)|
-|**Networking**|Bridge/Host|CNI (Calico, Cilium)|
-|**Storage**|Volumes locais|PV/PVC (cloud disks)|
-|**Complexity**|🟢 Baixa|🔴 Alta|
-|**Learning Curve**|🟢 Fácil|🔴 Difícil|
+| Aspecto                  | Docker Compose        | Kubernetes                    |
+| ------------------------ | --------------------- | ----------------------------- |
+| **Uso**                  | Desenvolvimento local | Produção (orquestração)       |
+| **Escala**               | 1 host                | Multi-node cluster            |
+| **Alta Disponibilidade** | ❌ Não                | ✅ Sim (replicas)             |
+| **Load Balancing**       | ❌ Manual             | ✅ Automático                 |
+| **Auto-scaling**         | ❌ Não                | ✅ HPA, VPA                   |
+| **Self-healing**         | ❌ Não                | ✅ Sim (restarts automáticos) |
+| **Service Discovery**    | ⚠️ DNS básico         | ✅ DNS + Endpoints            |
+| **Rolling Updates**      | ❌ Manual             | ✅ Automático                 |
+| **Secrets Management**   | ⚠️ Básico             | ✅ Nativo (encrypted)         |
+| **Networking**           | Bridge/Host           | CNI (Calico, Cilium)          |
+| **Storage**              | Volumes locais        | PV/PVC (cloud disks)          |
+| **Complexity**           | 🟢 Baixa              | 🔴 Alta                       |
+| **Learning Curve**       | 🟢 Fácil              | 🔴 Difícil                    |
 
 ---
 
@@ -2108,9 +2099,9 @@ Monitoring & Compliance:
 
 ## 📝 Changelog
 
-|Data|Versão|Alteração|
-|---|---|---|
-|2024-02-10|1.0|Documento inicial criado|
+| Data       | Versão | Alteração                |
+| ---------- | ------ | ------------------------ |
+| 2024-02-10 | 1.0    | Documento inicial criado |
 
 ---
 
