@@ -23,15 +23,89 @@
 
 **Definição:** Framework conceitual de **7 camadas** que padroniza funções de comunicação em redes.
 
-| **Camada**                         | **Detalhes**                                                                                                                                                                |
-| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **7. Application (Aplicação)**     | - Protocolos: HTTP, HTTPS, FTP, SSH, DNS, SMTP<br><br> <br><br>- Interface com usuário<br><br> <br><br>- Segurança: WAF, DLP, Email Gateway                                 |
-| **6. Presentation (Apresentação)** | - Criptografia/Descriptografia<br><br> <br><br>- Compressão de dados<br><br> <br><br>- Formatos: ASCII, JPEG, MPEG                                                          |
-| **5. Session (Sessão)**            | - Estabelecimento/Encerramento de sessões<br><br> <br><br>- Sincronização<br><br> <br><br>- Protocolos: NetBIOS, RPC                                                        |
-| **4. Transport (Transporte)**      | - Protocolos: TCP, UDP<br><br> <br><br>- Portas (0-65535)<br><br> <br><br>- Segmentação e Reassembly<br><br> <br><br>- Segurança: Firewall Stateful                         |
-| **3. Network (Rede)**              | - Protocolos: IP, ICMP, OSPF, BGP<br><br> <br><br>- Roteamento (path selection)<br><br> <br><br>- Endereçamento lógico (IP)<br><br> <br><br>- Segurança: Firewall, ACL, IPS |
-| **2. Data Link (Enlace de Dados)** | - Protocolos: Ethernet, Wi-Fi (802.11)<br><br> <br><br>- MAC Address<br><br> <br><br>- Switching<br><br> <br><br>- Segurança: Port Security, DAI, DHCP Snooping             |
-| **1. Physical (Física)**           | - Cabos: UTP, Fibra<br><br> <br><br>- Sinais elétricos/ópticos<br><br> <br><br>- Hubs, Repeaters<br><br> <br><br>- Segurança: Acesso físico, Cable locks                    |
+| **Camada**                         | **Detalhes**                                                                                                                                     |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **7. Application (Aplicação)**     | - Protocolos: HTTP, HTTPS, FTP, SSH, DNS, SMTP<br><br>- Interface com usuário<br><br>- Segurança: WAF, DLP, Email Gateway                        |
+| **6. Presentation (Apresentação)** | - Criptografia/Descriptografia<br><br>- Compressão de dados<br><br>- Formatos: ASCII, JPEG, MPEG                                                 |
+| **5. Session (Sessão)**            | - Estabelecimento/Encerramento de sessões<br><br>- Sincronização<br><br>- Protocolos: NetBIOS, RPC                                               |
+| **4. Transport (Transporte)**      | - Protocolos: TCP, UDP<br><br>- Portas (0-65535)<br><br>- Segmentação e Reassembly<br><br>- Segurança: Firewall Stateful                         |
+| **3. Network (Rede)**              | - Protocolos: IP, ICMP, OSPF, BGP<br><br>- Roteamento (path selection)<br><br>- Endereçamento lógico (IP)<br><br>- Segurança: Firewall, ACL, IPS |
+| **2. Data Link (Enlace de Dados)** | - Protocolos: Ethernet, Wi-Fi (802.11)<br><br>- MAC Address<br><br>- Switching<br><br>- Segurança: Port Security, DAI, DHCP Snooping             |
+| **1. Physical (Física)**           | - Cabos: UTP, Fibra<br><br>- Sinais elétricos/ópticos<br><br>- Hubs, Repeaters<br><br>- Segurança: Acesso físico, Cable locks                    |
+
+---
+
+>	PDU (Protocol Data Unit) = é o termo técnico para definir a unidade básica de dados que é transmitida em uma camada específica do modelo OSI, Conforme os dados descem pelas camadas do modelo OSI (um processo chamado **encapsulamento**), cada camada adiciona suas próprias informações de controle (cabeçalhos) à PDU da camada anterior.
+
+| **Camada OSI**                        | **Nome da PDU**                           | **O que acontece aqui?**                                            |
+| ------------------------------------- | ----------------------------------------- | ------------------------------------------------------------------- |
+| **Aplicação / Apresentação / Sessão** | **Dados**                                 | A informação bruta gerada pelo software (ex: o texto de um e-mail). |
+| **Transporte**                        | **Segmento** (TCP) ou **Datagrama** (UDP) | Adiciona portas de origem/destino e controle de fluxo.              |
+| **Rede**                              | **Pacote**                                | Adiciona os endereços IP (origem e destino).                        |
+| **Enlace**                            | **Quadro** (ou _Frame_)                   | Adiciona o endereço físico (MAC Address) e detecção de erros.       |
+| **Física**                            | **Bits**                                  | Os dados são convertidos em sinais elétricos, ópticos ou rádio.     |
+
+--- 
+## Resumo: Pilha (stack) TCP/IP
+
+![TCP/IP model layers diagram, gerada com IA|363](https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcRE4aeopFoZtWtqozaj9HjEzsCgaVS1ppiwL7BBgjRt0OP_gEul1hu3K-Y3WWm-jtd7kDD7nQwIkQwl-fQ7BGVu5e5IzycldbMCnh0K7FxQkEvjdz8)
+
+O modelo TCP/IP é a arquitetura base da internet, estruturada em **4 camadas**. Ele define como os dados são empacotados, endereçados, transmitidos, roteados e recebidos.
+
+### 4. Camada de Aplicação (Application)
+
+- **Função:** Ponto de interação entre os aplicativos do usuário e a rede. Fornece os serviços de rede diretamente para as aplicações.
+    
+- **Unidade de Dados (PDU):** Dado / Mensagem.
+    
+- **Protocolos Principais:** HTTP/HTTPS (web), DNS (resolução de nomes), SMTP/IMAP (email), FTP (arquivos), SSH.
+    
+
+### 3. Camada de Transporte (Transport)
+
+- **Função:** Estabelece a comunicação fim-a-fim entre as aplicações host. Gerencia a multiplexação (através de portas), controle de fluxo e, dependendo do protocolo, a confiabilidade.
+    
+- **Unidade de Dados (PDU):** Segmento (se for TCP) ou Datagrama (se for UDP).
+    
+- **Endereçamento:** Portas lógicas (ex: porta 80, 443, 53).
+    
+- **Protocolos Principais:**
+    
+    - **TCP:** Confiável, orientado a conexão, verifica erros, garante a entrega e a ordem dos dados.
+        
+    - **UDP:** Rápido, não orientado a conexão, não garante entrega ou ordem (ideal para streaming, VoIP, jogos online).
+        
+
+### 2. Camada de Internet (Internet / Rede)
+
+- **Função:** Roteamento de dados. Define o melhor caminho e encaminha os dados através de múltiplas redes até o destino final, independentemente da rota.
+    
+- **Unidade de Dados (PDU):** Pacote.
+    
+- **Endereçamento:** Endereço IP (Lógico).
+    
+- **Protocolos Principais:** IPv4, IPv6, ICMP (usado pelo utilitário `ping`), IPSec.
+    
+
+### 1. Camada de Acesso à Rede (Network Access / Link)
+
+- **Função:** Trata da interface física entre o dispositivo e o meio de transmissão (cabo, fibra, rádio). Converte pacotes em quadros e, posteriormente, em sinais elétricos/luminosos/ondas.
+    
+- **Unidade de Dados (PDU):** Quadro (Frame) no enlace lógico, que é convertido em Bits no meio físico.
+    
+- **Endereçamento:** Endereço MAC (Físico).
+    
+- **Tecnologias/Padrões Principais:** Ethernet, Wi-Fi (IEEE 802.11), ARP.
+    
+| **Camada**           | **Função Principal**      | **Unidade de Dados (PDU)** | **Endereçamento**     | **Exemplos de Protocolos/Padrões** |
+| -------------------- | ------------------------- | -------------------------- | --------------------- | ---------------------------------- |
+| **4. Aplicação**     | Serviços para aplicativos | Dado / Mensagem            | N/A                   | HTTP, DNS, FTP                     |
+| **3. Transporte**    | Comunicação fim-a-fim     | Segmento / Datagrama       | Porta de Serviço      | TCP, UDP                           |
+| **2. Internet**      | Roteamento entre redes    | Pacote                     | Endereço IP (Lógico)  | IPv4, IPv6, ICMP                   |
+| **1. Acesso à Rede** | Transmissão física local  | Quadro (Frame) / Bits      | Endereço MAC (Físico) | Ethernet, Wi-Fi, ARP               |
+
+
+---
 
 **Encapsulamento (Data Flow):**
 
