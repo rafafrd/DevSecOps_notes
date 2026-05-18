@@ -1,6 +1,6 @@
 ---
 titulo: Plano de Carreira — DevSecOps / AppSec
-autor: Rafael / Guilherme
+autor: Rafael
 criado: 2025-05-12
 atualizado: 2025-05-12
 versao: 1.0
