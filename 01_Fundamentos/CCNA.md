@@ -48,6 +48,8 @@ relacionado:
 
 ---
 
+
+
 ## 📋 Índice
 
 - [[#1. Modelo OSI — As 7 Camadas]]

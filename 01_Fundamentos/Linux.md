@@ -22,7 +22,7 @@ status: ativo
 nivel: intermediario-avancado
 relacionado:
   - "[[01_Fundamentos/Redes]]"
-  - "[[01_Fundamentos/Conteiners]]"
+  - "[[01_Fundamentos/Containers]]"
   - "[[02_Ferramentas_Stack/Tenable]]"
 ---
 # 🐧 Linux — Guia Técnico para DevSecOps e Cybersecurity
@@ -1695,4 +1695,4 @@ logs_e_auditoria:
 
 ---
 
-_Relacionado: [[01_Fundamentos/Redes]] · [[01_Fundamentos/Conteiners]] · [[02_Ferramentas_Stack/Tenable]] · [[02_Ferramentas_Stack/BigFix Compliance]]_
+_Relacionado: [[01_Fundamentos/Redes]] · [[01_Fundamentos/Containers]] · [[02_Ferramentas_Stack/Tenable]] · [[02_Ferramentas_Stack/BigFix Compliance]]_

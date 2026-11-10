@@ -46,13 +46,20 @@ mindmap
 
 ## ⚡ Navegação Rápida
 
-|🏗️ Fundamentos|🛠️ Stack da Squad|📚 Referências|
-|---|---|---|
-|[[01_Fundamentos/Linux\|🐧 Linux & Hardening]]|[[02_Ferramentas_Stack/SonarCube\|🔍 SonarQube]]|[[03_Glossarios/Siglas\|📖 Glossário de Siglas]]|
-|[[01_Fundamentos/CCNA\|🎓 CCNA 200-301]]|[[02_Ferramentas_Stack/Tenable\|🎯 Tenable]]|[[99_Inbox/\|📥 Capturas Rápidas]]|
-|[[01_Fundamentos/Redes\|🌐 Redes Cloud-Native]]|[[02_Ferramentas_Stack/OpenCTI\|🧠 OpenCTI]]||
-|[[01_Fundamentos/Conteiners\|🐳 Docker & Containers]]|[[02_Ferramentas_Stack/XM Cyber\|🛣️ XM Cyber]]||
-|[[01_Fundamentos/Git\|🌿 Git & GitOps]]|[[02_Ferramentas_Stack/BigFix Compliance\|🔧 BigFix]]||
+|🏗️ Fundamentos|🛠️ Stack da Squad|🧭 Domínios|🤖 IA · 🧪 Labs · 📚 Ref.|
+|---|---|---|---|
+|[[01_Fundamentos/Linux\|🐧 Linux & Hardening]]|[[02_Ferramentas_Stack/SonarQube\|🔍 SonarQube]]|[[04_Dominios/AppSec\|🧩 AppSec]]|[[05_IA/AI Security\|🤖 AI Security]]|
+|[[01_Fundamentos/CCNA\|🎓 CCNA 200-301]]|[[02_Ferramentas_Stack/Tenable\|🎯 Tenable]]|[[04_Dominios/Vuln Management & Métricas\|📉 Vuln Mgmt & MTTR]]|[[05_IA/SDD & PDD\|📐 SDD & PDD]]|
+|[[01_Fundamentos/Redes\|🌐 Redes]]|[[02_Ferramentas_Stack/OpenCTI\|🧠 OpenCTI]]|[[04_Dominios/Cloud Security\|☁️ Cloud Security]]|[[05_IA/Loop Engineering & Harness\|🔁 Loop Eng. & Harness]]|
+|[[01_Fundamentos/Redes Cloud-Native\|☁️ Redes Cloud-Native]]|[[02_Ferramentas_Stack/MISP\|🧬 MISP]]|[[04_Dominios/Supply Chain Security\|📦 Supply Chain]]|[[06_Labs/Homelab K3S\|🧪 Homelab K3S]]|
+|[[01_Fundamentos/Containers\|🐳 Docker & Containers]]|[[02_Ferramentas_Stack/XM Cyber\|🛣️ XM Cyber]]|[[04_Dominios/Compliance as Code\|📜 Compliance as Code]]|[[07_Casos_Trabalho/README\|💼 Casos de Trabalho]]|
+|[[01_Fundamentos/Kubernetes\|☸️ Kubernetes / K3S]]|[[02_Ferramentas_Stack/BigFix Compliance\|🔧 BigFix]]|[[04_Dominios/Secrets Management\|🔑 Secrets]]|[[03_Glossarios/Siglas\|📖 Glossário]]|
+|[[01_Fundamentos/Git\|🌿 Git]]|[[02_Ferramentas_Stack/Vicarius\|🩹 Vicarius]]|[[04_Dominios/Purple Team\|🟣 Purple Team]]|[[99_Inbox/kwords\|📥 Inbox]]|
+|[[01_Fundamentos/GitOps & ArgoCD\|🔁 GitOps & ArgoCD]]|[[02_Ferramentas_Stack/Wiz\|🔮 Wiz]]|[[04_Dominios/Threat Intel & Exploit Feed\|🛰️ CTI & Exploit Feed]]||
+||[[02_Ferramentas_Stack/OpenBao\|🔐 OpenBao]]|[[04_Dominios/CI-CD\|🚀 CI/CD]]||
+|||[[04_Dominios/Gestão de Risco\|⚖️ Gestão de Risco]] · [[04_Dominios/Data Security\|🗄️ Data Security]]||
+
+> [!TIP] Status das notas novas no frontmatter: `backlog` → `estudando` → `dominado`. Templates em `Templates/`.
 
 ---
 
@@ -97,7 +104,7 @@ squad_tools:
       - Pull Request aberto
       - Antes de merge na branch principal
       - Review de qualidade de novo serviço
-    link: "[[02_Ferramentas_Stack/SonarCube]]"
+    link: "[[02_Ferramentas_Stack/SonarQube]]"
 
   tenable:
     categoria: "Vulnerability Management"
@@ -292,7 +299,7 @@ vault_index:
         nivel: intermediario
 
       - titulo: "Redes Cloud-Native & DevSecOps"
-        link: "[[01_Fundamentos/Redes]]"
+        link: "[[01_Fundamentos/Redes Cloud-Native]]"
         topicos: ["VPC", "Kubernetes CNI", "Service Mesh", "Zero Trust", "ZTNA", "Firewall APIs"]
         nivel: avancado
 
@@ -302,7 +309,7 @@ vault_index:
         nivel: intermediario
 
       - titulo: "Docker & Containers"
-        link: "[[01_Fundamentos/Conteiners]]"
+        link: "[[01_Fundamentos/Containers]]"
         topicos: ["Docker", "Kubernetes", "Segurança de containers", "Registries", "CIS Benchmark"]
         nivel: intermediario
 
@@ -340,7 +347,7 @@ vault_index:
         nivel: intermediario
 
       - titulo: "SonarQube"
-        link: "[[02_Ferramentas_Stack/SonarCube]]"
+        link: "[[02_Ferramentas_Stack/SonarQube]]"
         topicos: ["SAST", "Quality Gates", "Rules", "CI/CD integration", "Security Hotspots"]
         nivel: basico-intermediario
 
@@ -390,4 +397,4 @@ flowchart TD
 
 ---
 
-_Atualizado em: 2026-03-02 · [[README|→ Ver README do repositório]]_
+_Atualizado em: 2026-11-10 · [[README|→ Ver README do repositório]]_

@@ -1,67 +1,22 @@
-Cyberops Threading manege/module
+# 📥 Inbox — kwords
 
----
+## ✅ Processados (já distribuídos)
+- Risco = incerteza · inerente → controle → residual · probabilidade × impacto → [[04_Dominios/Gestão de Risco]]
+- "Como você vai proteger o peixe dele" (comunicar valor ao negócio) → [[04_Dominios/Gestão de Risco]]
+- Maturidade × complexidade · sistemas core documentados end to end · operação vs rotina → [[04_Dominios/Gestão de Risco]]
+- DLP · Imperva (data security, cloud security, WAF) → [[04_Dominios/Data Security]]
+- Veracode · Black Duck · Fortify · SCA · shift left até o deploy → [[04_Dominios/AppSec]]
+- MCP (Wiz) → [[02_Ferramentas_Stack/Wiz]] · [[05_IA/AI Security]]
+- KPI, painéis, tratamento de dados → [[04_Dominios/Vuln Management & Métricas]]
 
-sistemas core precisam ser robustos e documentados end to end
+## ⏳ Pendentes
+- Cyberops Threading manege/module (?)
+- PoC
+- Comunicação complexa, ex.: RS232 (protocolos seriais / OT?)
+- TLS → candidato a seção em [[01_Fundamentos/Redes]]
+- "rabit" para code review → CodeRabbit? (revisão de PR com IA) → [[05_IA/Loop Engineering & Harness]]
 
----
-
-DLP
-data loss preservation
-
----
-
-poc
-
----
-
-quanto maior a maturidade, mais complexo fica o gerenciamento e processos
-
----
-comunicação compelxa ex: rs232
-
----
-mostrar para o usuario, como proteger o negocio dele, ele nao sabe oq vc faz e nem quer saber como, mas sim como vc vai evitar prejuízo, proteger o patrimônio e etc…
-“como vc vai proteger o peixe dele”
-
----
-risco = incerteza 
-
-risco inerente > (controle) > risco residual
-
-o que é risco, variaveis, impacto e probabilidade 
-
----
-TLS
-
----
-
-operaçao vs rotina
-
----
-
-atuarei em
-
-kpi, dev, paineis, tratamento de dados
-
----
-
-abrir vaga estagio em maio
-
----
-imperva data security - cloudsecurity
-
-devsecops:
-veracode
-blackduck
-fortify
-
----
-
-rabit para code review
-
----
-IBSEC
-curso devsecops
-
----
+## 🗒️ Pessoal / carreira
+- Atuarei em: KPI, dev, painéis, tratamento de dados
+- Abrir vaga de estágio em maio
+- IBSEC: curso DevSecOps

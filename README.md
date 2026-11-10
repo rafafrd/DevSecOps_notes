@@ -23,21 +23,39 @@ devsecops-kb/
 │
 ├── 📁 01_Fundamentos/              # Base técnica transversal
 │   ├── CCNA.md                     # Redes — CCNA 200-301 completo
-│   ├── Redes.md                    # Redes cloud-native, K8s, Zero Trust
+│   ├── Redes.md                    # Parte 1 — fundamentos de redes para segurança
+│   ├── Redes Cloud-Native.md       # Parte 2 — VPC, K8s networking, Zero Trust
 │   ├── Linux.md                    # Administração, hardening e scripting
-│   ├── Containers.md               # Docker, Kubernetes e segurança de containers
+│   ├── Containers.md               # Docker e segurança de containers
+│   ├── Kubernetes.md               # K8S/K3S e segurança de cluster
+│   ├── GitOps & ArgoCD.md          # GitOps e entrega contínua com ArgoCD
 │   └── Git.md                      # Controle de versão e práticas DevSecOps
 │
 ├── 📁 02_Ferramentas_Stack/        # Ferramentas do ecossistema de segurança
 │   ├── CTI, ASM & Vulnerability Management.md   # Shodan, Censys, VirusTotal, Tenable
 │   ├── Tenable.md                  # Vulnerability Management — Tenable.io / Nessus
+│   ├── Vicarius.md                 # Remediação de vulnerabilidades (vRx)
 │   ├── BigFix Compliance.md        # Compliance e patch management
 │   ├── OpenCTI.md                  # Plataforma de Cyber Threat Intelligence
+│   ├── MISP.md                     # Compartilhamento de IOCs
 │   ├── XM Cyber.md                 # Attack Path Management
+│   ├── Wiz.md                      # CNAPP e inventário de IA
+│   ├── OpenBao.md                  # Gerenciamento de segredos
 │   └── SonarQube.md                # SAST e qualidade de código
 │
 ├── 📁 03_Glossarios/               # Referências terminológicas
 │   └── Siglas.md                   # Dicionário de siglas e termos do ecossistema
+│
+├── 📁 04_Dominios/                 # Notas conceituais que ligam as ferramentas
+│   ├── AppSec.md · CI-CD.md · Supply Chain Security.md · Secrets Management.md
+│   ├── Vuln Management & Métricas.md · Threat Intel & Exploit Feed.md
+│   ├── Cloud Security.md · Compliance as Code.md · Data Security.md
+│   └── Purple Team.md · Gestão de Risco.md
+│
+├── 📁 05_IA/                       # AI Security, SDD & PDD, Loop Engineering & Harness
+├── 📁 06_Labs/                     # Homelab K3S — plataforma DevSecOps ponta a ponta
+├── 📁 07_Casos_Trabalho/           # Demandas reais → aprendizado (sem dados sensíveis)
+├── 📁 Templates/                   # Modelos de nota (ferramenta, caso de trabalho)
 │
 ├── 📁 99_Inbox/                    # Captura rápida — notas pendentes de refinamento
 │   └── kwords.md
@@ -55,7 +73,10 @@ devsecops-kb/
 | Arquivo | Conteúdo | Nível |
 |---|---|---|
 | `CCNA.md` | Modelo OSI, TCP/IP, Ethernet, Subnetting, VLANs, STP, OSPF, ACLs, Wireless, Automação | Intermediário |
-| `Redes.md` | VPC/Cloud Networking, Kubernetes CNI, Service Mesh, Zero Trust, ZTNA, Firewall APIs | Avançado |
+| `Redes.md` | Fundamentos de redes para segurança, serviços, troubleshooting | Intermediário |
+| `Redes Cloud-Native.md` | VPC/Cloud Networking, Kubernetes CNI, Service Mesh, Zero Trust, ZTNA, Firewall APIs | Avançado |
+| `Kubernetes.md` | K3S vs K8S, RBAC, Pod Security, NetworkPolicy, Falco, CKS | Intermediário |
+| `GitOps & ArgoCD.md` | Princípios GitOps, ArgoCD, segurança do CD | Intermediário |
 | `Linux.md` | Administração de sistemas, permissões, hardening, scripting Bash | Intermediário |
 | `Containers.md` | Docker, Kubernetes, segurança de containers, imagens e registries | Intermediário |
 | `Git.md` | Versionamento, branching, integração com pipelines CI/CD | Básico–Intermediário |
